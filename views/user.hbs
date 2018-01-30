@@ -1,0 +1,85 @@
+<style>
+    *{padding:0;margin:0}
+    html{margin-top:50px;}
+    .placeContent{width:100%;height:393px;margin-top:51px;padding:20px;}
+    .placeContent div{margin-bottom: 10px}
+    .placeName{color:#888888;font-size:20px;font-weight: 600}
+    .seeControl,.editControl{width:43px;height:30px;border:1px #FF1928 solid;padding:5px;border-radius: 4px;
+        background: antiquewhite;
+        float: left;cursor:pointer}
+</style>
+<div class="container-fluid">
+    <div class="place">
+
+    </div>
+    <div class="Control col-md-12">
+        <div class="seeControl">保存</div>
+        <div class="editControl">编辑</div>
+    </div>
+
+    <div class="placeContent">
+        <div class="see">
+
+        </div>
+        <div class="edit">
+            <div class="tx"><img src="/img/bac3.jpeg" alt=""></div>
+            昵称：<input type="text" value="ddddd">
+            密码：<input type="password" value="sss">
+            电话：<input type="text" value="ddd">
+            邮箱：<input type="text" value="ddd">
+            爱好：<input type="text" valuer="">
+            个人签名：<textarea name="" id="" cols="30" rows="10"></textarea>
+        </div>
+    </div>
+
+</div>
+<script>
+var ifo ={{{ifo}}}
+        console.log(ifo[0].name)
+$(".place").html( '<div class="placeName">'+ifo[0].name+'的空间</div>');
+        $(".see").html(
+            '<div class="tx"><img src="/img/bac3.jpeg" alt=""></div>'+
+        '<div class="name">昵称：'+ifo[0].name+'</div>'+
+'<div class="password">密码：'+ifo[0].password+'</div>'+
+'<div class="phone">电话：'+ifo[0].phone+'</div>'+
+'<div class="mail">邮箱：'+ifo[0].mail+'</div>'+
+'<div class="favourite">爱好：'+ifo[0].favourite+'</div>'+
+'<div class="signature">个人签名：'+ifo[0].signature+'</div>');
+        $(".edit").html( '<div class="tx"><img src="/img/bac3.jpeg" alt=""></div>'+
+        '昵称：<input type="text" class="e1" value="'+ifo[0].name+'" disabled="disabled">'+
+        '密码：<input type="password" class="e2" value="'+ifo[0].password+'">'+
+        '电话：<input type="text" class="e3" value="'+ifo[0].phone+'">'+
+        '邮箱：<input type="text"  class="e4" value="'+ifo[0].mail+'">'+
+        '爱好：<input type="text" class="e5" value="'+ifo[0].favourite+'">'+
+        '个人签名：<textarea name="" class="e6" id="" cols="30" rows="4">'+ifo[0].signature+'</textarea>')
+    $(".seeControl,.edit").hide();
+    $(".editControl").on("click",function(){
+        $(this).hide().siblings().show();
+        $(".see").hide().siblings().show();
+    })
+    $(".seeControl").on("click",function(){
+        var name=$(".e1").val(),
+        password=$(".e2").val(),
+        phone = $(".e3").val(),
+        mail = $(".e4").val(),
+        favourite = $(".e5").val(),
+        signature = $(".e6").val();
+        var data={name:name,password:password,phone:phone,mail:mail,favourite:favourite,signature:signature}
+        $.ajax({
+            url:"/edit",
+            type:"post",
+            data:data,
+            success:function(data,status){
+                if(status == "success"){
+                    alert("更新成功！")
+                }
+            },
+            error:function(err){
+                console.log(err)
+            }
+        })
+        $(this).hide().siblings().show();
+        $(".edit").hide().siblings().show();
+    })
+</script>
+

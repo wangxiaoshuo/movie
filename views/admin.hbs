@@ -1,0 +1,1005 @@
+<style>
+    .admin{margin-top:50px;height:850px;}
+    .form-horizontal{width:50%;float:left;display:none}
+    .a{display:block}
+    .control{float:left;width:20%;height:500px;}
+    .control ul li{width:100%;height:30px;text-align: center;line-height: 30px;cursor: pointer;border:1px #ccc solid;font-size: 14px}
+    .control ul li:first-child{background:#FF1928;color:#fff;}
+    .detail1 a img{width:16rem;height:22rem;border-radius: 0.2rem}
+    .detail1{float:left;margin-right: 1rem}
+    .search-input{    display: block;  height: 34px;  padding: 6px 12px;  font-size: 14px;  line-height: 1.42857143;  color: #555;  background-color: #fff;  background-image: none;  border: 1px solid #ccc;  border-radius: 4px;}
+</style>
+<div class="control">
+    <ul>
+        <li class="c1 aa">电影信息录入与更新</li>
+        <li class="c2">电视剧信息录入与更新</li>
+        <li class="c3">动漫信息录入与更新</li>
+        <li class="c4">游戏信息录入与更新</li>
+        <li class="c5">舞蹈MV信息录入与更新</li>
+        <li class="c6">轮播海报更新</li>
+        <li class="c7">电影海报更换</li>
+        <li class="c8">电影信息查询与删除</li>
+        <li class="c9">电视剧信息查询与删除</li>
+        <li class="c10">动漫信息查询与删除</li>
+        <li class="c11">游戏信息查询与删除</li>
+        <li class="c12">舞蹈MV信息查询与删除</li>
+    </ul>
+</div>
+<div class="admin">
+   <!-- 电影录入-->
+    <form class="form-horizontal a mvUpdate" role="form" method="post" onsubmit="return false">
+        <fieldset>
+            <legend>管理员</legend>
+            <div class="panel panel-default ">
+                <div class="panel-heading col-md-12">
+                    <p class="p1">电影录入界面</p>
+                </div>
+                <div class="panel-header col-md-6">
+                    <p class="p1"></p>
+                </div>
+                <div class="panel-body row">
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">MovieID</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电影ID" id="movieID" name="movieID">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">MovieName</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电影名字" id="Name" name="Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">MovieScore</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电影评分" id="score" name="score">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">PlayCount</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电影播放次数" id="count" name="count">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">MovieKind</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电影标签" id="kind">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">MovieK</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电影推荐区（1,2,3）" id="k">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">CommentCount</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电影评分人数" id="commentCount">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">Doctor</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入导演名字" id="Doctor" name="doctor">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">Actor</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入主演名字" id="actor" name="actor">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">Country</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电影发行国家" id="Country">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">Summary</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电影简介" id="Summary">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">Poster</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入电影海报地址" id="Poster">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">maxPoster</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入电影轮播海报" id="maxPoster">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">minPoster</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入电影轮播略缩海报" id="minPoster">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">PlayUrl</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入电影地址" id="playUrl">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">Year</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电影年份" id="Year">
+                        </div>
+                    </div>
+                    <button type="submit"  class="btn btn-primary movieBtn col-md-3 col-md-offset-5">更新</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+  <!--  首页电影海报更改-->
+    <form  class="form-horizontal mposter" role="form" method="post" onsubmit="return false">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <p>修改电影海报地址</p>
+            </div>
+            <div class="panel-body">
+                <div class="form-group col-md-12">
+                    <label for="" class="control-label col-md-4">movieName</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="请输入电影名字" id="movieName">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="" class="control-label col-md-4">PosterUrl</label>
+                    <div class="col-md-8">
+                        <input type="url" class="form-control" placeholder="请输入海报地址" id="moviePoster">
+                    </div>
+                </div>
+                <button type="submit"  class="btn btn-primary mPosterBtn col-md-3 col-md-offset-5">更新</button>
+            </div>
+        </div>
+
+
+    </form>
+   <!-- 轮播海报-->
+    <form  class="form-horizontal poster" role="form" method="post" onsubmit="return false">
+        <div class="panel panel-default">
+            <div class="panel-heading">
+                <p>轮播海报录入界面</p>
+            </div>
+         <div class="panel-body">
+             <div class="form-group col-md-12">
+                 <label for="" class="control-label col-md-4">PosterID</label>
+                 <div class="col-md-8">
+                     <input type="text" class="form-control" placeholder="请输入轮播海报ID" id="o">
+                 </div>
+             </div>
+             <div class="form-group col-md-12">
+                 <label for="" class="control-label col-md-4">PosterName</label>
+                 <div class="col-md-8">
+                     <input type="text" class="form-control" placeholder="请输入轮播海报名字" id="n">
+                 </div>
+             </div>
+             <div class="form-group col-md-12">
+                 <label for="" class="control-label col-md-4">PosterUrl</label>
+                 <div class="col-md-8">
+                     <input type="url" class="form-control" placeholder="请输入轮播海报地址" id="p">
+                 </div>
+             </div>
+             <div class="form-group col-md-12">
+                 <label for="" class="control-label col-md-4">minPosterUrl</label>
+                 <div class="col-md-8">
+                     <input type="url" class="form-control" placeholder="请输入轮播略缩图海报地址" id="minPosterUrl">
+                 </div>
+             </div>
+             <button type="submit"  class="btn btn-primary posterBtn col-md-3 col-md-offset-5">更新</button>
+         </div>
+         </div>
+
+
+    </form>
+   <!-- 电视录入-->
+    <form class="form-horizontal tvUpdate" role="form" method="post" onsubmit="return false">
+        <fieldset>
+            <div class="panel panel-default ">
+                <div class="panel-heading col-md-12">
+                    <p class="p1">电视剧录入界面</p>
+                </div>
+                <div class="panel-header col-md-6">
+                    <p class="p1"></p>
+                </div>
+                <div class="panel-body row">
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">TVid</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电视剧ID" id="tvid" name="TVid">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">TVName</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电视剧名字" id="TVName" name="Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">TVScore</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电视剧评分" id="TVscore" name="score">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">TVPlayCount</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电视剧播放次数" id="TVcount" name="count">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">TVKind</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电视剧标签" id="TVkind">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">TVK</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电视推荐区（1,2,3）" id="TVk">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">TVCommentCount</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电视剧评分人数" id="TVcommentCount">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">TVDoctor</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入导演名字" id="TVDoctor" name="doctor">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">TVActor</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入主演名字" id="TVactor" name="actor">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">TVCountry</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电视剧发行国家" id="TVCountry">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">TVSummary</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电视剧简介" id="TVSummary">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">TVPoster</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入电视剧海报地址" id="TVPoster">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">maxTVPoster</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入电视剧轮播海报地址" id="maxTVPoster">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">minTVPoster</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入电视剧轮播海报略缩图" id="minTVPoster">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">TVPlayUrl</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入电视剧地址" id="TVPlayUrl">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">Year</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入电视剧年份" id="TVYear">
+                        </div>
+                    </div>
+                    <button type="submit"  class="btn btn-primary TVBtn col-md-3 col-md-offset-5">更新</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+ <!--   动漫录入-->
+    <form class="form-horizontal acUpdate" role="form" method="post" onsubmit="return false">
+        <fieldset>
+            <div class="panel panel-default ">
+                <div class="panel-heading col-md-12">
+                    <p class="p1">动漫录入界面</p>
+                </div>
+                <div class="panel-header col-md-6">
+                    <p class="p1"></p>
+                </div>
+                <div class="panel-body row">
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">ACid</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入动漫ID" id="acid" name="TVid">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">ACName</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入动漫名字" id="ACName" name="Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">ACScore</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入动漫评分" id="ACscore" name="score">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">ACPlayCount</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入动漫播放次数" id="ACcount" name="count">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">ACKind</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入动漫标签" id="ACkind">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">ACKind</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入动漫推荐区（1,2,3）" id="ACk">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">ACCommentCount</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入动漫评分人数" id="ACcommentCount">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">ACDoctor</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入导演名字" id="ACDoctor" name="doctor">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">ACActor</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入配音名字" id="ACactor" name="actor">
+                        </div>
+                    </div>
+
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">ACCountry</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入动漫发行国家" id="ACCountry">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">ACSummary</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入动漫简介" id="ACSummary">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">ACPoster</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入动漫海报地址" id="ACPoster">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">maxACPoster</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入动漫轮播海报地址" id="maxACPoster">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">minACPoster</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入动漫轮播略缩图地址" id="minACPoster">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">ACPlayUrl</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入动漫地址" id="ACPlayUrl">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">Year</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入动漫年份" id="ACYear">
+                        </div>
+                    </div>
+                    <button type="submit"  class="btn btn-primary ACBtn col-md-3 col-md-offset-5">更新</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+  <!--  游戏录入-->
+    <form class="form-horizontal gmUpdate" role="form" method="post" onsubmit="return false">
+    <fieldset>
+        <div class="panel panel-default ">
+            <div class="panel-heading col-md-12">
+                <p class="p1">游戏录入界面</p>
+            </div>
+            <div class="panel-header col-md-6">
+                <p class="p1"></p>
+            </div>
+            <div class="panel-body row">
+                <div class="form-group col-md-12">
+                    <label for="" class="control-label col-md-4">GMid</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="请输入游戏ID" id="gmid" name="TVid">
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="" class="control-label col-md-4">GMName</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="请输入游戏视频名字" id="GMName" name="Name">
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="" class="control-label col-md-4">GMPlayCount</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="请输入游戏视频播放次数" id="GMcount" name="count">
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="" class="control-label col-md-4">GMKind</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="请输入游戏视频标签" id="GMkind">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="" class="control-label col-md-4">GMK</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="请输入游戏视频推荐区（1,2,3）" id="GMk">
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="" class="control-label col-md-4">GMDoctor</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="请输入视频出处" id="GMDoctor" name="doctor">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="" class="control-label col-md-4">GMPLAYTIME</label>
+                    <div class="col-md-8">
+                        <input type="text" class="form-control" placeholder="请输入视频播放时间" id="GMPlayTime" name="actor">
+                    </div>
+                </div>
+
+                <div class="form-group col-md-12">
+                    <label for="" class="control-label col-md-4">GMPoster</label>
+                    <div class="col-md-8">
+                        <input type="url" class="form-control" placeholder="请输入游戏视频地址" id="GMPoster">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="" class="control-label col-md-4">maxGMPoster</label>
+                    <div class="col-md-8">
+                        <input type="url" class="form-control" placeholder="请输入游戏轮播海报地址" id="maxGMPoster">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="" class="control-label col-md-4">minGMPoster</label>
+                    <div class="col-md-8">
+                        <input type="url" class="form-control" placeholder="请输入游戏轮播略缩图地址" id="minGMPoster">
+                    </div>
+                </div>
+                <div class="form-group col-md-12">
+                    <label for="" class="control-label col-md-4">GMPlayUrl</label>
+                    <div class="col-md-8">
+                        <input type="url" class="form-control" placeholder="请输入游戏视频播放地址" id="GMPlayUrl">
+                    </div>
+                </div>
+                <button type="submit"  class="btn btn-primary GMBtn col-md-3 col-md-offset-5">游戏视频更新</button>
+            </div>
+        </div>
+    </fieldset>
+</form>
+    <!--舞蹈MV录入-->
+    <form class="form-horizontal dcUpdate" role="form" method="post" onsubmit="return false">
+        <fieldset>
+            <div class="panel panel-default ">
+                <div class="panel-heading col-md-12">
+                    <p class="p1">舞蹈MV录入界面</p>
+                </div>
+                <div class="panel-header col-md-6">
+                    <p class="p1"></p>
+                </div>
+                <div class="panel-body row">
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">DCid</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入舞蹈ID" id="dcid" name="TVid">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">DCName</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入舞蹈视频名字" id="DCName" name="Name">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">DCPlayCount</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入舞蹈视频播放次数" id="DCcount" name="count">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">DCKind</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入舞蹈标签（舞蹈种类与舞者,1,2,3）" id="DCkind">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">DCK</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入舞蹈标签" id="DCk">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">DCDoctor</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入舞者名字" id="DCDoctor" name="doctor">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">DCPlayTime</label>
+                        <div class="col-md-8">
+                            <input type="text" class="form-control" placeholder="请输入舞蹈播放时间" id="DCPlayTime" name="actor">
+                        </div>
+                    </div>
+
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">DCPoster</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入舞蹈海报地址" id="DCPoster">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">maxDCPoster</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入舞蹈轮播海报地址" id="maxDCPoster">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">minDCPoster</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入舞蹈略缩图地址" id="minDCPoster">
+                        </div>
+                    </div>
+                    <div class="form-group col-md-12">
+                        <label for="" class="control-label col-md-4">DCPlayUrl</label>
+                        <div class="col-md-8">
+                            <input type="url" class="form-control" placeholder="请输入舞蹈地址" id="DCPlayUrl">
+                        </div>
+                    </div>
+
+                    <button type="submit"  class="btn btn-primary DCBtn col-md-3 col-md-offset-5">舞蹈视频更新</button>
+                </div>
+            </div>
+        </fieldset>
+    </form>
+    <!--电影信息查询-->
+    <form class="form-horizontal mvIfo" role="form" method="post" onsubmit="return false">
+        <fieldset>
+            <div class="panel panel-default ">
+                <div class="panel-heading col-md-12">
+                    <p class="p1">电影信息查询</p>
+                </div>
+                <div class="find col-md-12">
+                    <input type="text" class="search-input col-md-6" placeholder="请输入需要查询的视频" id="mvS" >
+                    <button type="submit"  class="btn btn-info mvSearchBtn col-md-2">查询</button>
+                    <button type="submit"  class="btn btn-danger mvDelBtn col-md-2">删除</button>
+                </div>
+                <div class="mvIfoContent col-md-12">
+
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+    <!--电视剧信息查询-->
+    <form class="form-horizontal tvIfo" role="form" method="post" onsubmit="return false">
+        <fieldset>
+            <div class="panel panel-default ">
+                <div class="panel-heading col-md-12">
+                    <p class="p1">电视剧信息查询</p>
+                </div>
+                <div class="find col-md-12">
+                    <input type="text" class="search-input col-md-6" placeholder="请输入需要查询的视频" id="tvS" >
+                    <button type="submit"  class="btn btn-info tvSearchBtn col-md-2">查询</button>
+                    <button type="submit"  class="btn btn-danger tvDelBtn col-md-2">删除</button>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+    <!--动漫信息查询-->
+    <form class="form-horizontal acIfo" role="form" method="post" onsubmit="return false">
+        <fieldset>
+            <div class="panel panel-default ">
+                <div class="panel-heading col-md-12">
+                    <p class="p1">动漫信息查询</p>
+                </div>
+                <div class="find col-md-12">
+                    <input type="text" class="search-input col-md-6" placeholder="请输入需要查询的视频" id="acS" >
+                    <button type="submit"  class="btn btn-info acSearchBtn col-md-2">查询</button>
+                    <button type="submit"  class="btn btn-danger acDelBtn col-md-2">删除</button>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+    <!--游戏信息查询-->
+    <form class="form-horizontal gmIfo" role="form" method="post" onsubmit="return false">
+        <fieldset>
+            <div class="panel panel-default ">
+                <div class="panel-heading col-md-12">
+                    <p class="p1">游戏信息查询</p>
+                </div>
+                <div class="find col-md-12">
+                    <input type="text" class="search-input col-md-6" placeholder="请输入需要查询的视频" id="gmS" >
+                    <button type="submit"  class="btn btn-info gmSearchBtn col-md-2">查询</button>
+                    <button type="submit"  class="btn btn-danger gmDelBtn col-md-2">删除</button>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+    <!--舞蹈信息查询-->
+    <form class="form-horizontal dcIfo" role="form" method="post" onsubmit="return false">
+        <fieldset>
+            <div class="panel panel-default ">
+                <div class="panel-heading col-md-12">
+                    <p class="p1">舞蹈信息查询</p>
+                </div>
+                <div class="find col-md-12">
+                    <input type="text" class="search-input col-md-6" placeholder="请输入需要查询的视频" id="dcS" >
+                    <button type="submit"  class="btn btn-info dcSearchBtn col-md-2">查询</button>
+                    <button type="submit"  class="btn btn-danger dcDelBtn col-md-2">删除</button>
+                </div>
+
+            </div>
+        </fieldset>
+    </form>
+</div>
+<script>
+    $(".movieBtn").on("click",function(){
+        var doctor = $("#Doctor").val();
+        var name = $("#Name").val(),
+                actor = $("#actor").val(),
+                movieID = $("#movieID").val(),
+                country = $("#Country").val(),
+                summary = $("#Summary").val(),
+                poster = $("#Poster").val(),
+                maxPoster = $("#maxPoster").val(),
+                minPoster = $("#minPoster").val(),
+                playUrl = $("#playUrl").val(),
+                year = $("#Year").val(),
+                score = $("#score").val(),
+                count = $("#count").val(),
+                kind = $("#kind").val(),
+                k = $("#k").val(),
+                commentCount = $("#commentCount").val(),
+                date = Date.now();
+        var data = {id:movieID,name:name,score:score,count:count,commentCount:commentCount,kind:kind,k:k,actor:actor,doctor:doctor,country:country,summary:summary,poster:poster,minPoster:minPoster,maxPoster:maxPoster,playUrl:playUrl,year:year,date:date};
+        $.ajax({
+            url:"/admin",
+            type:"post",
+            data:data,
+            success:function(data,status){
+                if(status == "success"){
+                    location.href = "/admin";
+                }
+            },
+            error:function(data,status){
+                console.log(err);
+            }
+        })
+    });//电影录入
+    $(".TVBtn").on("click",function(){
+        var doctor = $("#TVDoctor").val();
+        var name = $("#TVName").val(),
+                actor = $("#TVactor").val(),
+                movieID = $("#tvid").val(),
+                country = $("#TVCountry").val(),
+                summary = $("#TVSummary").val(),
+                poster = $("#TVPoster").val(),
+                maxPoster = $("#maxTVPoster").val(),
+                minPoster = $("#minTVPoster").val(),
+                playUrl = $("#TVPlayUrl").val(),
+                year = $("#TVYear").val(),
+                score = $("#TVscore").val(),
+                count = $("#TVcount").val(),
+                kind = $("#TVkind").val(),
+                k = $("#TVk").val(),
+                commentCount = $("#TVcommentCount").val(),
+                date = Date.now();
+        var data = {id:movieID,name:name,score:score,count:count,commentCount:commentCount,kind:kind,k:k,actor:actor,doctor:doctor,country:country,summary:summary,poster:poster,minPoster:minPoster,maxPoster:maxPoster,playUrl:playUrl,year:year,date:date};
+        $.ajax({
+            url:"/tvupdate",
+            type:"post",
+            data:data,
+            success:function(data,status){
+                if(status == "success"){
+                    location.href = "/admin";
+                }
+            },
+            error:function(data,status){
+                console.log(err);
+            }
+        })
+    });//电视录入
+    $(".ACBtn").on("click",function(){
+        var doctor = $("#ACDoctor").val();
+        var name = $("#ACName").val(),
+                actor = $("#ACactor").val(),
+                movieID = $("#acid").val(),
+                country = $("#ACCountry").val(),
+                summary = $("#ACSummary").val(),
+                poster = $("#ACPoster").val(),
+                maxPoster = $("#maxACPoster").val(),
+                minPoster = $("#minACPoster").val(),
+                playUrl = $("#ACPlayUrl").val(),
+                year = $("#ACYear").val(),
+                score = $("#ACscore").val(),
+                count = $("#ACcount").val(),
+                kind = $("#ACkind").val(),
+                k = $("#ACk").val(),
+                commentCount = $("#ACcommentCount").val(),
+                date = Date.now();
+        var data = {id:movieID,name:name,score:score,count:count,commentCount:commentCount,kind:kind,k:k,actor:actor,doctor:doctor,country:country,summary:summary,poster:poster,minPoster:minPoster,maxPoster:maxPoster,playUrl:playUrl,year:year,date:date};
+        $.ajax({
+            url:"/acupdate",
+            type:"post",
+            data:data,
+            success:function(data,status){
+                if(status == "success"){
+                    location.href = "/admin";
+                }
+            },
+            error:function(data,status){
+                console.log(err);
+            }
+        })
+    });//动漫录入
+    $(".GMBtn").on("click",function(){
+        var doctor = $("#GMDoctor").val();
+        var name = $("#GMName").val(),
+                playTime = $("#GMPlayTime").val(),
+                movieID = $("#gmid").val(),
+                poster = $("#GMPoster").val(),
+                maxPoster = $("#maxGMPoster").val(),
+                minPoster = $("#minGMPoster").val(),
+                playUrl = $("#GMPlayUrl").val(),
+                count = $("#GMcount").val(),
+                kind = $("#GMkind").val(),
+                k = $("#GMk").val(),
+                date = Date.now();
+        var data = {id:movieID,name:name,count:count,kind:kind,k:k,playTime:playTime,doctor:doctor,poster:poster,minPoster:minPoster,maxPoster:maxPoster,playUrl:playUrl,date:date};
+        $.ajax({
+            url:"/gmupdate",
+            type:"post",
+            data:data,
+            success:function(data,status){
+                if(status == "success"){
+                    location.href = "/admin";
+                }
+            },
+            error:function(data,status){
+                console.log(err);
+            }
+        })
+    });//游戏录入
+    $(".DCBtn").on("click",function(){
+        var doctor = $("#DCDoctor").val();
+        var name = $("#DCName").val(),
+                playTime = $("#DCPlayTime").val(),
+                movieID = $("#dcid").val(),
+                poster = $("#DCPoster").val(),
+                maxPoster = $("#maxDCPoster").val(),
+                minPoster = $("#minDCPoster").val(),
+                playUrl = $("#DCPlayUrl").val(),
+                count = $("#DCcount").val(),
+                kind = $("#DCkind").val(),
+                dck = $("#DCk").val(),
+                date = Date.now();
+        var data = {id:movieID,name:name,count:count,kind:kind,dck:dck,playTime:playTime,doctor:doctor,poster:poster,minPoster:minPoster,maxPoster:maxPoster,playUrl:playUrl,date:date};
+        $.ajax({
+            url:"/dcupdate",
+            type:"post",
+            data:data,
+            success:function(data,status){
+                if(status == "success"){
+                    location.href = "/admin";
+                }
+            },
+            error:function(data,status){
+                console.log(err);
+            }
+        })
+    });//舞蹈MV录入
+    $(".mPosterBtn").on("click",function(){
+       var name = $("#movieName").val(),
+               mPoster = $("#moviePoster").val();
+       var data = {name:name,poster:mPoster};
+       $.ajax({
+           url:"/admin2",
+           type:"post",
+           data:data,
+           success:function(data,status){
+               if(status == "success"){
+                   location.href = "/admin";
+               }
+           },
+           error:function (err) {
+               console.log(err)
+           }
+       })
+    });//电影海报更换
+    $(".posterBtn").on("click",function(){
+        var poster = $("#p").val(),
+                name = $("#n").val(),
+                id = $("#o").val(),
+                minPosterUrl = $("#minPosterUrl").val();
+        var data = {poster:poster,name:name,id:id,minPosterUrl:minPosterUrl};
+        $.ajax({
+            url:"/admin1",
+            type:"post",
+            data:data,
+            success:function(data,status){
+                if(status == "success"){
+                    location.href = "/admin"
+                }
+            },
+            error:function(err){
+                console.log(err);
+            }
+        })
+    })//轮播海报更换
+    $(".mvSearchBtn").on("click",function(){
+        var name = $("#mvS").val();
+        var data = {name:name};
+        $.ajax({
+            url:"/mvSearch",
+            type:"post",
+            data:data,
+            success:function(data,status){
+                if(status == "success"){
+                    var data = data[0];
+                    $(".mvIfoContent").html(  '<div class="avDetail">'+
+                            '<p><strong>'+data.name+'</strong></p>'+
+                            '<div class="detail1">'+
+                            '<a href=""><img src='+data.poster+' alt=""></a>'+
+                            '<div class="sc">'+
+
+                            '</div>'+
+                            '</div>'+
+                            '<ul>'+
+                            '<li>主演：'+data.actor+'</li>'+
+                    '<li>标签：'+data.kind+'</li>'+
+                    '<li>地区：'+data.country+'</li>'+
+                    '<li>导演：'+data.doctor+'</li>'+
+                    '<li>年份：<a href="">'+data.year+'</a></li>'+
+                            '<li>更新时间：<span>'+data.date+'</span></li>'+
+                    '<li>影片剧情：<span>'+data.summary+'</span></li>'+
+                    '</ul>'+
+                    '</div>')
+                }
+            },
+            error:function(err){
+                console.log(err)
+            }
+        })
+    })//电影信息查询
+    $(".mvDelBtn").on("click",function(){
+        var name = $("#mvS").val();
+        var data = {name:name};
+        $.ajax({
+            url:"/avDel",
+            type:"post",
+            data:data,
+            success:function(data,success){
+                if(status == "success"){
+                    alert("删除成功！")
+                }
+            },
+            error:function(err){
+                alert("删除失败！")
+            }
+        })
+    })
+
+    $(".control ul").delegate("li","click",function(){
+        $(this).css({"background":"#FF1928","color":"#fff"}).addClass("aa").siblings(".aa").css({"background":"#fff","color":"#333"}).removeClass("aa")
+    }).delegate("li","mouseover",function(){
+            $(this).css({"background":"#FF1928","color":"#fff"})
+    }).delegate("li","mouseout",function(){
+        if($(this).hasClass("aa")){
+            $(this).css({"background":"#FF1928","color":"#fff"})
+        }else{
+            $(this).css({"background":"#fff","color":"#333"})
+        }
+    })
+    $(".c1").on("click",function(){
+        $(".mvUpdate").show().siblings().hide()
+    })
+    $(".c2").on("click",function(){
+        $(".tvUpdate").show().siblings().hide()
+    })
+    $(".c3").on("click",function(){
+        $(".acUpdate").show().siblings().hide()
+    })
+    $(".c4").on("click",function(){
+        $(".gmUpdate").show().siblings().hide()
+    })
+    $(".c5").on("click",function(){
+        $(".dcUpdate").show().siblings().hide()
+    })
+    $(".c6").on("click",function(){
+        $(".poster").show().siblings().hide()
+    })
+    $(".c7").on("click",function(){
+        $(".mposter").show().siblings().hide()
+    })
+    $(".c8").on("click",function(){
+        $(".mvIfo").show().siblings().hide()
+    })
+    $(".c9").on("click",function(){
+        $(".tvIfo").show().siblings().hide()
+    })
+    $(".c10").on("click",function(){
+        $(".acIfo").show().siblings().hide()
+    })
+    $(".c11").on("click",function(){
+        $(".gmIfo").show().siblings().hide()
+    })
+    $(".c12").on("click",function(){
+        $(".dcIfo").show().siblings().hide()
+    })
+</script>

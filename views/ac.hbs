@@ -1,0 +1,1173 @@
+
+<link rel="stylesheet" href="/css/layout.css">
+<link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<style>
+    .container{width:90%}
+    .auto-play{width:88%;height:300px;overflow: hidden;background-color: #0f0f0f;margin-top:45px;}
+    .auto-play .auto-img .pic a img{display:block;width:100%;height:300px;float:left;}
+    .auto-img .auto-footer{position: absolute;top:276px;width:88%;height:69px;background:url("/img/shade.png")-10px -110px;opacity: 0.8;}
+
+
+
+
+    .view ul li{position:relative;float:left;margin:10px 0px 10px 3%;display: block;font-size: 12px;color:#222;overflow: hidden}
+    .v10{width:47%;height:240px;}
+    .v1 {width:17%;height:255px;}
+    .view ul li .text{overflow: hidden; text-overflow: ellipsis;}
+    .v20{padding-left:10px;height:198px;position:relative}
+    .v2{padding-left:1px; font-size:10px;}
+    .view ul li .img-ani{height:200px;float:left;overflow: hidden;position: relative}
+    .v30{width:41%;}
+    .v3{width:100%}
+    .view ul li .img-ani .shade{width:100%;height:44px;background: url("/img/lisBg.png") repeat-x;position:absolute;top:156px;line-height: 30px;padding-top:14px;}
+    .movieSortImg .shade i{height:77%;background:crimson}
+    .view ul li .img-ani .shade .score{color:#FF4D00;float:right;margin-right:10px;
+        font-weight:600;font-size:15px;}
+    .view ul li .img-ani .shade .playTime{;position:absolute;left:10px;color:white;font-weight:500}
+    .view ul li a img{display:block;width:100%;height:200px;border-radius: 5px;box-shadow:0 0 5px lightgreen;opacity: 1;}
+    .view ul li .img-ani:hover a img{position:absolute;top:-25px;left:-25px;width:200px;height:250px;}
+    .text a:hover img{opacity:0.6; transition: opacity 0.35s,transform 0.35s;}
+    .text a{display:block;margin-top:5px;}
+    .text p{float:right;margin-right:10px;margin-top:5px;font-size:10px;color:#99a2aa}
+    .text .summary{width:100%;height:116px;color:#999;margin-top:35px;margin-bottom:10px;text-indent:2em;overflow:hidden;
+        text-overflow:ellipsis;
+        display: -webkit-box;
+        -webkit-line-clamp: 7;
+        -webkit-box-orient: vertical;}
+    .pages{display:block;border:none;text-transform:uppercase;font-size:14px;margin:10px 0 50px;padding:0;}
+    .pages li{float:left;padding:4px 7px;text-decoration: none;border:1px solid #ddd;border-left-width: 0;list-style: none;margin:0 3px 0 0;border-radius:3px;cursor: pointer}
+    .d3j{position:absolute;right:10px;color:white;font-weight:500;font-family: "微软雅黑", "宋体", Arial, Helvetica, sans-serif;font-size:11px;}
+
+    .i{color:#fff;font-weight:700;background:#EE202D}
+    .pages li:hover{color:#fff;background:#3c4852}
+    .hh{display:none}
+
+    .mvn ul li{width:21.5%;height:160px;float:left;margin-left:3%;}
+    .mvn ul li .image{display:block;width:100%;height:120px;border-radius: 5px;overflow: hidden;position: relative}
+    .mvn ul li img{width:100%;height:120px;}
+    .hotRecommend{padding-left:4%;}
+    .hotRecommend .title{font-size:18px;}
+    .gg img{width:100%;height:170px;}
+    .gg a{display:block;width:88%;border-radius: 5px;overflow: hidden;margin-top:8px;}
+    .recommend{margin-top:30px;}
+    /*简介底部样式*/
+    .avBottom{width:107%;height:20px;position: absolute;bottom:0;left:0}
+    .avPlayCount,.avCommentCount{
+        width:50%;height:20px;float:left;
+        line-height: 20px;
+    }
+    .v4{padding-left:10px}
+    .videoL3 .avBottom .avPlayCount i{}
+    .avCommentCount i{display:block;width:12px;height:15px;line-height:15px;text-align:center;float:left;background:url("/img/icons.png")-282px -217px;margin:3px 5px;}
+    .avCommentCount span,.avPlayCount span{display:block;float:left;font-size:10px;}
+    .avPlayCount i{display:block;width:12px;height:15px;text-align:center;line-height:15px;margin:3px 5px;float:left;background:url("/img/icons.png")-282px -345px;}
+
+
+    /*右侧按评分排序样式*/
+    .gmHeader{border-bottom:1px #E3E3E3 solid;overflow: hidden;height:50px;line-height: 50px;}
+    .gmHeader .gmHeaderLeft{float:left;font-size:18px;}
+    .gmHeader .gmHeaderLeft span{color:#E94646;font-weight:600}
+    .gmHeaderRight{float:right;}
+    .gmHeaderRight .playCount{padding:5px 10px;cursor: pointer;font-size:12px;height:30px;color:#fff;line-height: 23px;background:#E94646;float:left;margin-top:19px;}
+    .hot-movie-right{font-size: large;font-family: '微软雅黑', '宋体', Arial, Helvetica, sans-serif;text-align: center;width: 100%;height:50px;line-height: 50px;border-bottom: 2px #f0ad4e solid}
+    .hot-movie-right a{font-weight:900;color:#FF282C}
+    .hot-movie-sort,.hot-tv-sort,.hot-ac-sort{height:521px;}
+    .hot-movie-sort ul li:not(:first-child),.hot-tv-sort ul li:not(:first-child),.hot-ac-sort ul li:not(:first-child){margin-top:12px;position: relative;width:100%;height:18px;}
+    .number{width:18px;height:18px;background:rgb(242, 93, 142);color:rgb(255, 255, 255);float:left;text-align: center;line-height: 18px;margin-left:-10px;border-radius:5px;}
+    .movieSortName{float:left;width:74%}
+    .hot-detail{height:152px;line-height:20px;float:left;padding:10px;margin-left:-6px;font-size: small;overflow:hidden;text-overflow:ellipsis;display: -webkit-box;
+        -webkit-line-clamp: 3;
+        -webkit-box-orient: vertical;color:#666;}
+    .hot-detail p span{font-size: 12px;font-weight: 500}
+    .hot-movie-sort ul li .a,.hot-tv-sort ul li a,.hot-ac-sort ul li a{display:block;}
+    .movieSortScore{float:right;color:#ccc;}
+    .movieSortScore img{display:block;width:18px;height:18px;float:left}
+    .movieSortScore small{    color: #E94646;
+        font-weight: 900;
+        display: block;
+        width: 44px;
+        text-align: center;}
+    .shade{width:93%;height:20px;background: url("/img/lisBg.png")0 -10px repeat-x;position:absolute;top:125px;line-height: 20px;}
+
+    .shade i{font-size:17px;margin:2px 10px;float:left;color:#fff;border-radius:23px;}
+    .view ul li .shade i{font-size:10px;margin:9px 13px;}
+    .view ul li .shade p{width:50px;height:30px;line-height:30px;float:left;color:#fff;margin-left:-3%;font-size:10px;}
+    .shade .playTime{;position:absolute;right:10px;color:white;font-weight:500;font-size:13px}
+    .movieSortImg{padding:0px;margin-top:5px;float:left}
+    .movieSortImg img{width:93%;height:145px;border-radius: 5px;box-shadow:1px 1px 10px red}
+    .hot-movie-sort ul li,.hot-tv-sort ul li,.hot-ac-sort ul li{clear:both;}
+    .movieSortSecond{width:100%;height:145px;}
+    .movieSortSecond .hot-detail p{overflow: hidden;text-overflow:ellipsis;display: -webkit-box;
+        -webkit-line-clamp: 6;
+        -webkit-box-orient: vertical;font-weight:600}
+
+    .hot-tv-sort ul li .avPlayCount i,.hot-ac-sort ul li .avPlayCount i{background:url("/img/icons.png")-282px -345px;}
+    .movieSortOne{width:100%;height:20px;font-size:13px;}
+    .movieSortOne a{display:block;height:20px;overflow: hidden;}
+    .movieSortOne a:hover{color:rgb(242, 93, 142)}
+</style>
+<div class="all">
+    <div class="auto-play container">
+        <div class="row">
+            <div class="auto-img">
+                <div class="pic">
+
+                </div>
+                <div class="auto-footer">
+                    <div class="row">
+                        <ul class="col-md-7 col-sm-7 col-xs-7 ">
+
+                        </ul>
+                        <div class="ifo col-md-4 col-sm-4 col-xs-4" style="height:50px;line-height: 50px;float:left;color:#fff">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="recommend container">
+        <div class="row">
+            <div class="hotRecommend col-md-9">
+                <div class="title">Oibip热门</div>
+                <div class="mvn">
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+            <div class="gg col-md-3">
+                <div class="title">特别推荐</div>
+            </div>
+        </div>
+
+    </div>
+    <div class="container">
+        <div class="row">
+            <div class="content">
+                <div class="movie-nav col-md-12">
+
+                    <div class="avNavLeft">
+                        <div class="kindName">
+                            <div class="kindIcon kIcon1"></div>
+                            <p>动漫</p>
+                        </div>
+                        <div class="hotMovieMenu">
+                            <div class="hotTag">
+                                <i></i>
+                                热门标签
+                            </div>
+                            <ul class="movieCountry">
+                                <div class="avcAll b1 aa">全部</div>
+                                <li class="b1 c1">国漫</li>
+                                <li class="b1 c2">日漫</li>
+                            </ul>
+                            <ul class="movieKind">
+                                <div class="avkAll b1 aa">全部</div>
+                                <li class="b1">战斗</li>
+                                <li class="b1">冒险</li>
+                                <li class="b1">魔幻</li>
+                                <li class="b1">搞笑</li>
+                                <li class="b1">治愈</li>
+                                <li class="b1">动画</li>
+
+                            </ul>
+                        </div>
+                        <div class="kns">
+                            <div class="kindN last">
+                                按最近更新
+                                <i class="fa fa-sort-asc s3" aria-hidden="true"></i>
+                            </div>
+                            <div class="kindS">
+                                按视频热度
+                                <i class="fa fa-sort-asc s3" aria-hidden="true"></i>
+                            </div>
+                        </div>
+                        <ul class="mode">
+                            <li class="mode1 selected"></li>
+                            <li class="mode2"></li>
+                        </ul>
+                    </div>
+
+                </div>
+
+                <div class="view col-md-9">
+                    <ul>
+
+                    </ul>
+                </div>
+                <div class="col-md-3 col-sm-3 col-xs-3 hot-movie-sort videoL3">
+                    <div class="gmHeader">
+                        <div class="gmHeaderLeft"><span>动漫</span>排行榜</div>
+                        <div class="gmHeaderRight">
+                            <div class="playCount">播放次数</div>
+                        </div>
+                    </div>
+                    <ul>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-12">
+                <ul class="pages col-md-4">
+                    <li class="firstPage">首页</li>
+                    <li class="prePage">上一页</li>
+                    <li class="nextPage">下一页</li>
+                    <li class="lastPage">末页</li>
+                </ul>
+            </div>
+        </div>
+
+        <div class="loading"><img src="/img/loading3.gif" alt=""></div>
+    </div>
+</div>
+
+
+<script src="/js/jquery.min.js"></script>
+<!--图片轮播-->
+<script>
+    var poster = {{{poster}}}
+    for(var i=0;i<6;i++){
+        $(".pic").append(
+                '<a href="#" class="aimg-'+parseInt(i+1)+'" ><img src='+poster[i].maxPoster+'  alt='+poster[i].name+'></a>'
+        )
+        $(".auto-footer ul").append(
+                '<li>'+
+                '<a href=""><img  src="'+poster[i].minPoster+'" alt=""></a>'+
+                '<div class="mask"></div>'+
+                '</li>'
+        )
+    }
+
+    $(".auto-footer ul li").first().addClass("on")
+    var a=1,b=1;
+    var num =0;
+    $(function () {
+        $(".ifo").html($(".aimg-1").find("img").attr("alt"));
+        var index=$(".pic a").length;
+        $(".auto-next").click(function(){
+            b+=1;
+            if(b>index)b=1;
+            if(a>index)a=1;
+            $(".aimg-"+a).hide();
+            $(".aimg-"+b).show();
+            $(".auto-img ul li").eq(a-1).removeClass("on");
+            $(".auto-img ul li").eq(b-1).addClass("on");
+            $(".ifo").html($(".aimg-"+b).find("img").attr("alt"));
+            a+=1;
+        });
+        $(".auto-pre").click(function(){
+            b-=1;
+            if(b<1)b=index;
+            if(a<1)a=index;
+            $(".aimg-"+a).hide();
+            $(".aimg-"+b).show();
+            $(".auto-img ul li").eq(a-1).removeClass("on");
+            $(".auto-img ul li").eq(b-1).addClass("on");
+            $(".ifo").html($(".aimg-"+b).find("img").attr("alt"));
+            a-=1;
+        });
+        var time=0;
+        time=setInterval(function(){
+            b+=1;
+            if(b>index)b=1;
+            if(a>index)a=1;
+            $(".aimg-"+a).fadeOut();
+            $(".aimg-"+b).fadeIn();
+            $(".auto-img ul li").eq(a-1).removeClass("on");
+            $(".auto-img ul li").eq(b-1).addClass("on");
+            $(".ifo").html($(".aimg-"+b).find("img").attr("alt"));
+            a+=1;
+        },2000);
+
+        $(".auto-img ul").delegate("li","mouseover",function(){
+            num = $(".auto-img ul li").index(this)+1;
+            $(".aimg-"+a).hide();
+            $(".aimg-"+num).show();
+            $(".auto-img ul li").eq(a-1).removeClass("on");
+            $(".auto-img ul li").eq(num-1).addClass("on");
+            $(".ifo").html($(".aimg-"+num).find("img").attr("alt"));
+            a=b=num;
+        });
+
+        $(".auto-play,.auto-play ul").mouseenter(function () {
+            clearInterval(time);
+        });
+        $(".auto-play").mouseleave(function(){
+            time=setInterval(function () {
+                b+=1;
+                if(b>index)b=1;
+                if(a>index)a=1;
+                $(".aimg-"+a).hide();
+                $(".aimg-"+b).show();
+                $(".auto-img ul li").eq(a-1).removeClass("on");
+                $(".auto-img ul li").eq(b-1).addClass("on");
+                $(".ifo").html($(".aimg-"+b).find("img").attr("alt"));
+                a+=1;
+            },2000);
+        });
+
+    });
+</script>
+<script>
+    $(function(){
+        function num(a){
+            var n = a/10000;
+            if(n < 1){
+                return a;
+            }else{
+                return n.toFixed(2)+"万"
+            }
+        }
+        function mode(){
+            if($(".mode1").hasClass("selected")){
+                $(".mode1").css({"background":"url('/img/icons.png')-346px -922px"}).siblings().css({"background":"url('/img/icons.png')-282px -986px"})
+                $(".view ul li").addClass("v10").removeClass("v1")
+                $(".view ul li .text").addClass("v20").removeClass("v2")
+                $(".view ul li .img-ani").addClass("v30").removeClass("v3")
+                $(".view ul li .text .avBottom .avPlayCount").addClass("v4")
+                $(" .view ul li .text p,.view ul li .text .summary").show();
+
+            }else{
+                $(".mode2").css({"background":"url('/img/icons.png')-346px -986px"}).siblings().css({"background":"url('/img/icons.png')-282px -922px"})
+                $(".view ul li").addClass("v1").removeClass("v10")
+                $(".view ul li .text").addClass("v2").removeClass("v20")
+                $(".view ul li .img-ani").addClass("v3").removeClass("v30")
+                $(".view ul li .text .avBottom .avPlayCount").removeClass("v4")
+                $(" .view ul li .text p,.view ul li .text .summary").hide()
+            }
+        }
+        function auto(dd) {
+            for(var i in dd){
+                var d3j = dd[i].playUrl.split("，");
+                if(dd[i].playUrl.indexOf("。")>-1){
+                    $(".content .view ul").append(
+                            '<li>'+
+                            '<div class="img-ani">'+
+                            '<a href="/movie/detail/'+dd[i]._id+'?id='+dd[i]._id+'" class="ww w1" title='+dd[i].name+'><img src='+dd[i].poster+' alt='+dd[i].name+'>'+
+                            '</a>'+
+                            '<div class="shade">'+
+                            '<i class="fa fa-play"></i>'+
+                            '<p>'+num(dd[i].playCount)+'</p>'+
+                            '<div class="d3j">'+parseInt(d3j.length-1)+'集全</div>'+
+                            '</div>'+
+                            '</div>'+
+
+                            '<div class="text">'+
+                            '<a href="" title='+dd[i].name+'><strong>【'+dd[i].country+'】'+dd[i].name+'</strong></a>'+
+                            '<p>更新时间：'+moment(dd[i].date).format("YYYY-MM-DD")+'</p>'+
+                            '<div class="summary">'+dd[i].summary+'</div>'+
+                            '<div class="avBottom">'+
+                            '<div class="avPlayCount"><i></i><span>'+num(dd[i].score)+'</span></div>'+
+                            '<div class="avCommentCount"><i></i><span>'+num(dd[i].commentCount)+'</span></div>'+
+                            '</div>'+
+                            '</div>'+
+                            '</li>'
+                    )
+                }else{
+                    $(".content .view ul").append(
+                            '<li>'+
+                            '<div class="img-ani">'+
+                            '<a href="/movie/detail/'+dd[i]._id+'?id='+dd[i]._id+'" class="ww w1" title='+dd[i].name+'><img src='+dd[i].poster+' alt='+dd[i].name+'>'+
+                            '</a>'+
+                            '<div class="shade">'+
+                            '<i class="fa fa-play"></i>'+
+                            '<p>'+num(dd[i].playCount)+'</p>'+
+                            '<div class="d3j">更新至第'+d3j.length+'集</div>'+
+                            '</div>'+
+                            '</div>'+
+
+                            '<div class="text">'+
+                            '<a href="" title='+dd[i].name+'><strong>【'+dd[i].country+'】'+dd[i].name+'</strong></a>'+
+                            '<p>更新时间：'+moment(dd[i].date).format("YYYY-MM-DD")+'</p>'+
+                            '<div class="summary">'+dd[i].summary+'</div>'+
+                            '<div class="avBottom">'+
+                            '<div class="avPlayCount"><i></i><span>'+num(dd[i].playCount)+'</span></div>'+
+                            '<div class="avCommentCount"><i></i><span>'+num(dd[i].commentCount)+'</span></div>'+
+                            '</div>'+
+                            '</div>'+
+                            '</li>'
+                    )
+                }
+
+            }
+        }
+        /* 分页导航栏处理,请确保至少有两页，因为2jun没有考虑一页的情况*/
+        var pageLength = {{length}};
+        var l = Math.ceil(pageLength/20);
+        console.log(l);
+        function page(l,url){
+            if(l<6){
+                for(var i=0;i<l;i++){
+                    $(".nextPage").before( '<li class=" d page p'+parseInt(i+1)+'">'+parseInt(i+1)+'</li>')
+                }
+            }else{
+                for(var i=0;i<l;i++){
+                    if(i>2 && i<parseInt(l-1)){
+                        $(".nextPage").before( '<li class="d page p'+parseInt(i+1)+' h">'+parseInt(i+1)+'</li>')
+                    }else{
+                        $(".nextPage").before( '<li class="d page p'+parseInt(i+1)+'">'+parseInt(i+1)+'</li>')
+                    }
+                }
+                $(".p"+parseInt(l)).before( '<li class="page s'+l+'">...</li>')
+                $(".h").addClass("hh");
+            }
+            var p1=1; //初始定义p1=1
+            $(".prePage").css({"display":"none"});
+            $(".p1").addClass("i");
+            $(".firstPage").on("click",function(){
+                $("html,body").animate({
+                    scrollTop:690
+                },0)
+                $(".nextPage").css({"display":"block"});
+                $(".prePage").css({"display":"none"});
+
+                p1 = 1;
+                $(".p1").addClass("i").siblings().removeClass("i");
+                $.ajax({
+                    url:url,
+                    type:"post",
+                    data:{s:p1},
+                    success:function(data,status){
+                        if(status == "success"){
+                            console.log(data);
+                            $(".content .view ul").empty();
+                            var dd =data;
+                            auto(dd)
+                            mode()
+                        }
+                    },
+                    error:function(err){
+                        console.log("page"+err)
+                    }
+                })
+            });
+            $(".lastPage").on("click",function(){
+                $("html,body").animate({
+                    scrollTop:690
+                },0)
+                p1 = l;
+                $(".nextPage").css({"display":"none"});
+                $(".prePage").css({"display":"block"});
+                $(".p"+p1).addClass("i").siblings().removeClass("i")
+                $.ajax({
+                    url:url,
+                    type:"post",
+                    data:{s:p1},
+                    success:function(data,status){
+                        if(status == "success"){
+                            console.log(data);
+                            $(".content .view ul").empty();
+                            var dd =data;
+                            auto(dd)
+                            mode()
+                        }
+                    },
+                    error:function(err){
+                        console.log("page"+err)
+                    }
+                })
+            });
+            $(".pages").delegate(".d","click",function(){
+                $("html,body").animate({
+                    scrollTop:690
+                },0)
+                $(this).addClass("i").siblings().removeClass("i");
+                p1=parseInt($(this).text());
+                if(p1 == l){
+                    $(".nextPage").css({"display":"none"})
+                    $(".prePage").css({"display":"block"})
+                }else if(p1 == 1){
+                    $(".prePage").css({"display":"none"})
+                    $(".nextPage").css({"display":"block"})
+                }else{
+                    $(".nextPage").css({"display":"block"})
+                    $(".prePage").css({"display":"block"})
+                }
+                $.ajax({
+                    url:url,
+                    type:"post",
+                    data:{s:p1},
+                    success:function(data,status){
+                        if(status == "success"){
+
+                            console.log(data);
+                            $(".content .view ul").empty();
+                            var dd =data;
+                            auto(dd)
+                            mode()
+                        }
+                    },
+                    error:function(err){
+                        console.log("page"+err)
+                    }
+                })
+            }).css({"margin-left":"36%"});
+            /* $(".prePage").css({"display":"none"});*/
+            $(".prePage").on("click",function(){
+                $("html,body").animate({
+                    scrollTop:690
+                },0)
+                p1 -= 1;
+                if(p1 == 1){
+                    $(".prePage").css({"display":"none"})
+                    $(".nextPage").css({"display":"block"})
+                }else{
+                    $(".nextPage").css({"display":"block"})
+                    $(".prePage").css({"display":"block"})
+                }
+                $.ajax({
+                    url:url,
+                    type:"post",
+                    data:{s:p1},
+                    success:function(data,status){
+                        if(status == "success"){
+
+                            console.log(data);
+                            $(".content .view ul").empty();
+                            var dd =data;
+                            auto(dd)
+                            mode()
+                        }
+                    },
+                    error:function(err){
+                        console.log("page"+err)
+                    }
+                });
+                if(p1 < 1){
+                    return p1=1;
+                }else if($(".p"+p1).prev().hasClass("hh") && p1>3){
+                    $("li").remove(".s"+parseInt(p1+1));
+                    $(".p"+p1).before( '<li class="page s'+p1+'">...</li>');
+                }else {
+                    $("li").remove(".s"+parseInt(p1+1))
+                }
+                $(".p"+p1).addClass("i").removeClass("hh").siblings().removeClass("i");
+            });
+            $(".nextPage").on("click",function(){
+                $("html,body").animate({
+                    scrollTop:690
+                },0)
+                p1 += 1;
+                if(p1 == l){
+                    $(".nextPage").css({"display":"none"});
+                    $(".prePage").css({"display":"block"})
+                }else{
+                    $(".nextPage").css({"display":"block"});
+                    $(".prePage").css({"display":"block"})
+                }
+                $.ajax({
+                    url:url,
+                    type:"post",
+                    data:{s:p1},
+                    success:function(data,status){
+                        if(status == "success"){
+                            console.log(data);
+                            $(".content .view ul").empty();
+                            var dd =data;
+                            auto(dd)
+                            mode()
+                        }
+                    },
+                    error:function(err){
+                        console.log("page"+err)
+                    }
+                })
+                if(p1 == l){
+                    $(".nextPage").css({"display":"none"})
+                    $(".p" + p1).removeClass("hh").addClass("i").siblings().removeClass("i");
+                }else if(p1 <= 3){
+                    $(".p"+p1).addClass("i").siblings().removeClass("i");
+                }else if(p1 > 3 ) {
+                    $(".p" + p1).removeClass("hh").addClass("i").siblings().removeClass("i");
+                }
+            });
+        }
+        page(l,"/ac");
+        /* 自动显示按最近更新*/
+        var j = {{{j}}}
+        for(i = 0;i<j.length;i++){
+            $(".mvn ul").append(
+                    '<li>'+
+                    '<a href="" class="image"><img src="'+j[i].poster+'" alt="">' +
+                    '<div class="kept">'+
+                    '<div class="kePlay"></div>'+
+                    '<div class="keTime">'+j[i].playTime+'</div>'+
+                    '</div>'+
+                    '</a>'+
+
+                    '<div class="mvnName"><a href="">'+j[i].name+'</a></div>'+
+                    '</li>'
+            )
+        }
+        var jj = {{{jj}}};
+        $(".gg").append(
+                '<a href="" class="image"><img src="'+jj[0].poster+'" alt=""></a>'+
+                '<div class="mvnName"><a href="">'+jj[0].name+'</a></div>'
+        )
+        window.onload=function () {
+            $(".loading").hide()
+        }
+        /*   点击显示最近更新排序*/
+        $(".kindN ").on("click",function(){
+            $.ajax({
+                url:"/aclast",
+                type:"get",
+                success:function(data,status){
+                    if(status == "success"){
+                        $(".content .view ul").empty();
+                        $(".pages li").remove(".page");
+                        var dl = Math.ceil(data.length/20);
+                        console.log(dl);
+                        if(dl == 1){
+                            $(".prePage,.nextPage").css({"display":"none"})
+                        }
+                        page(dl,"/aclast");
+                        var dd =data.doc;
+                        auto(dd)
+                        mode()
+                    }
+                },
+                error:function(err){
+                    console.log(err)
+                }
+            })
+        });
+        /*   点击显示评分排序*/
+        $(".kindS").on("click",function(){
+            $.ajax({
+                url:"/acplaycount",
+                type:"get",
+                success:function(data,status){
+                    if(status == "success"){
+                        $(".content .view ul").empty();
+                        $(".pages li").remove(".page");
+                        var dl = Math.ceil(data.length/20);
+                        console.log(dl);
+                        if(dl == 1){
+                            $(".prePage,.nextPage").css({"display":"none"})
+                        }
+                        console.log(dl);
+                        page(dl,"/acplaycount");
+                        var dd =data.doc;
+                        auto(dd)
+                        mode()
+                    }
+                },
+                error:function(err){
+                    console.log(err)
+                }
+            })
+        });
+        /*    电影评分排序*/
+        var m = {{{d}}}
+                console.log(typeof(m))
+        for(var i in m){
+            var d3j = m[i].playUrl.split("，");
+            console.log(d3j.length)
+            if(m[i].playUrl.indexOf("。")>-1){
+                $(".hot-movie-sort ul").append(
+                        '<li>'+
+                        '<div class="movieSortOne">'+
+                        '<div class="number">'+(parseInt(i)+1)+'</div>'+
+                        '<div class="movieSortName"><a href="">【'+m[i].country+'】'+m[i].name+'</a></div>'+
+                        '<div class="movieSortScore">'+
+                        '<small>'+num(m[i].playCount)+'</small>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="movieSortSecond">'+
+                        '<div class="movieSortImg col-md-6">'+
+                        '<a href="/movie/detail/'+m[i]._id+' class="ww" title='+m[i].name+'><img src='+m[i].poster+' alt='+m[i].poster+'>'+
+                        '</a>'+
+                        '<div class="shade">'+
+                        '<i class="fa fa-play-circle"></i>'+
+                        '<div class="d3j">'+parseInt(d3j.length-1)+'集全</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="hot-detail col-md-6">'+
+
+                        '<p>影片简介：<span>'+m[i].summary+'</span></p>'+
+                        '<div class="avBottom">'+
+                        '<div class="avPlayCount"><i></i><span>'+m[i].score+'</span></div>'+
+                        '<div class="avCommentCount"><i></i><span>'+num(m[i].commentCount)+'</span></div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</li>')
+            }
+            else{
+                $(".hot-movie-sort ul").append(
+                        '<li>'+
+                        '<div class="movieSortOne">'+
+                        '<div class="number">'+(parseInt(i)+1)+'</div>'+
+                        '<div class="movieSortName"><a href="">【'+m[i].country+'】'+m[i].name+'</a></div>'+
+                        '<div class="movieSortScore">'+
+                        '<small>'+num(m[i].playCount)+'</small>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="movieSortSecond">'+
+                        '<div class="movieSortImg col-md-6">'+
+                        '<a href="/movie/detail/'+m[i]._id+' class="ww" title='+m[i].name+'><img src='+m[i].poster+' alt='+m[i].poster+'>'+
+                        '</a>'+
+                        '<div class="shade">'+
+                        '<i class="fa fa-play-circle"></i>'+
+                        '<div class="d3j">更新至第'+d3j.length+'集</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="hot-detail col-md-6">'+
+
+                        '<p>影片简介：<span>'+m[i].summary+'</span></p>'+
+                        '<div class="avBottom">'+
+                        '<div class="avPlayCount"><i></i><span>'+m[i].score+'</span></div>'+
+                        '<div class="avCommentCount"><i></i><span>'+num(m[i].commentCount)+'</span></div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</li>')
+            }
+        }
+        /*右侧排序事件处理*/
+        $(".hot-movie-sort ul li:not(:nth-child(1)) .movieSortSecond,.hot-tv-sort ul li:not(:nth-child(1)) .movieSortSecond").css({"display":"none"})
+        $(".movieSortOne").mouseover(function(){
+            $(this).siblings().css({"display":"block"}).parent().siblings().find(".movieSortSecond").css({"display":"none"})
+        });
+        $(".hot-movie-sort ul li,.hot-tv-sort ul li").mouseover(function(){
+            $(this).find(".movieSortName a").css({"color":"rgb(242, 93, 142)"})
+        }).mouseout(function(){
+            $(this).find(".movieSortName a").css({"color":"#0f0f0f"})
+        });
+        /*点击标签排序*/
+        $(".movieCountry").delegate("li","click",function(){
+            var countryName = $(this).text();
+            if($(".kindN").hasClass("selected")){   /*最近更新下*/
+                if($(".avkAll").hasClass("aa")){
+                    $.ajax({
+                        url:"/accountryl",
+                        type:"get",
+                        data:{cn:countryName},
+                        success:function(data,status){
+                            if(status == "success"){
+                                console.log(data.length);
+                                $(".content .view ul").empty();
+                                $(".pages li").remove(".page");
+                                var dl = Math.ceil(data.length/20);
+                                console.log(dl);
+                                if(dl == 1){
+                                    $(".prePage,.nextPage").css({"display":"none"})
+                                }
+                                console.log(dl);
+                                page(dl,"/accountryl");
+                                var dd =data.doc;
+                                auto(dd)
+                                mode()
+                            }
+                        },
+                        error:function(err){
+                            console.log("reqCountry:"+err)
+                        }
+                    })
+                }else{
+                    console.log($(this).text())
+                    console.log($(".movieKind .aa").text())
+                    var kind = $(".movieKind .aa").text();
+                    $.ajax({
+                        url:"/accomplexn",
+                        type:"get",
+                        data:{cn:countryName,k:kind},
+                        success:function(data,status){
+                            if(status == "success"){
+                                console.log(data.length);
+                                $(".content .view ul").empty();
+                                $(".pages li").remove(".page");
+                                var dl = Math.ceil(data.length/20);
+                                console.log(dl);
+                                if(dl == 1){
+                                    $(".prePage,.nextPage").css({"display":"none"})
+                                }
+                                console.log(dl);
+                                page(dl,"/accomplexn");
+                                var dd =data.doc;
+                                auto(dd)
+                                mode()
+                            }
+                        },
+                        error:function(err){
+                            console.log("reqCountry:"+err)
+                        }
+                    })
+                }
+            }
+            else{
+                if($(".avkAll").hasClass("aa")){
+                    $.ajax({
+                        url:"/accountrys",
+                        type:"get",
+                        data:{cn:countryName},
+                        success:function(data,status){
+                            if(status == "success"){
+                                console.log(data.length);
+                                $(".content .view ul").empty();
+                                $(".pages li").remove(".page");
+                                var dl = Math.ceil(data.length/20);
+                                console.log(dl);
+                                if(dl == 1){
+                                    $(".prePage,.nextPage").css({"display":"none"})
+                                }
+                                console.log(dl);
+                                page(dl,"/accountrys");
+                                var dd =data.doc;
+                                auto(dd)
+                                mode()
+                            }
+                        },
+                        error:function(err){
+                            console.log("reqCountry:"+err)
+                        }
+                    })
+                }else{
+                    console.log($(this).text())
+                    console.log($(".movieKind .aa").text())
+                    var kind = $(".movieKind .aa").text();
+                    $.ajax({
+                        url:"/accomplexs",
+                        type:"get",
+                        data:{cn:countryName,k:kind},
+                        success:function(data,status){
+                            if(status == "success"){
+                                console.log(data.length);
+                                $(".content .view ul").empty();
+                                $(".pages li").remove(".page");
+                                var dl = Math.ceil(data.length/20);
+                                console.log(dl);
+                                if(dl == 1){
+                                    $(".prePage,.nextPage").css({"display":"none"})
+                                }
+                                console.log(dl);
+                                page(dl,"/accomplexs");
+                                var dd =data.doc;
+                                auto(dd)
+                                mode()
+                            }
+                        },
+                        error:function(err){
+                            console.log("reqCountry:"+err)
+                        }
+                    })
+                }
+            }
+        });
+        $(".movieKind").delegate("li","click",function(){
+            var kind = $(this).text();
+            if($(".kindN").hasClass("selected")){   /*最近更新下*/
+                if($(".avcAll").hasClass("aa")) {
+                    console.log($(this).text())
+                    $.ajax({
+                        url:"/ackindl",
+                        type:"get",
+                        data:{k:kind},
+                        success:function(data,status){
+                            if(status == "success"){
+                                $(".content .view ul").empty();
+                                $(".pages li").remove(".page");
+                                var dl = Math.ceil(data.length/20);
+                                console.log(dl);
+                                if(dl == 1){
+                                    $(".prePage,.nextPage").css({"display":"none"})
+                                }
+                                console.log(dl);
+                                page(dl,"/ackindl");
+                                var dd =data.doc;
+                                auto(dd)
+                                mode()
+                            }
+                        },
+                        error:function(err){
+                            console.log("reqCountry:"+err)
+                        }
+                    })
+                }
+                else{
+                    console.log($(this).text())
+                    console.log($(".movieCountry .aa").text())
+                    var countryName = $(".movieCountry .aa").text();
+                    $.ajax({
+                        url:"accomplexn",
+                        type:"get",
+                        data:{cn:countryName,k:kind},
+                        success:function(data,status){
+                            if(status == "success"){
+                                console.log(data.length);
+                                $(".content .view ul").empty();
+                                $(".pages li").remove(".page");
+                                var dl = Math.ceil(data.length/20);
+                                console.log(dl);
+                                if(dl == 1){
+                                    $(".prePage,.nextPage").css({"display":"none"})
+                                }
+                                console.log(dl);
+                                page(dl,"/accomplexn");
+                                var dd =data.doc;
+                                auto(dd)
+                                mode()
+                            }
+                        },
+                        error:function(err){
+                            console.log("reqCountry:"+err)
+                        }
+                    })
+                }
+            }
+            else{
+                if($(".avcAll").hasClass("aa")){
+                    $.ajax({
+                        url:"/ackinds",
+                        type:"get",
+                        data:{k:kind},
+                        success:function(data,status){
+                            if(status == "success"){
+                                console.log(data.length);
+                                $(".content .view ul").empty();
+                                $(".pages li").remove(".page");
+                                var dl = Math.ceil(data.length/20);
+                                console.log(dl);
+                                if(dl == 1){
+                                    $(".prePage,.nextPage").css({"display":"none"})
+                                }
+                                console.log(dl);
+                                page(dl,"/ackinds");
+                                var dd =data.doc;
+                                auto(dd)
+                                mode()
+                            }
+                        },
+                        error:function(err){
+                            console.log("reqCountry:"+err)
+                        }
+                    })
+                }else{
+                    console.log($(this).text())
+                    console.log($(".movieCountry .aa").text())
+                    var countryName = $(".movieCountry .aa").text();
+                    $.ajax({
+                        url:"/accomplexs",
+                        type:"get",
+                        data:{cn:countryName,k:kind},
+                        success:function(data,status){
+                            if(status == "success"){
+                                console.log(data.length);
+                                $(".content .view ul").empty();
+                                $(".pages li").remove(".page");
+                                var dl = Math.ceil(data.length/20);
+                                console.log(dl);
+                                if(dl == 1){
+                                    $(".prePage,.nextPage").css({"display":"none"})
+                                }
+                                console.log(dl);
+                                page(dl,"/accomplexs");
+                                var dd =data.doc;
+                                auto(dd)
+                                mode()
+                            }
+                        },
+                        error:function(err){
+                            console.log("reqCountry:"+err)
+                        }
+                    })
+                }
+            }
+        });
+        $(".avcAll").on("click",function(){
+            if($(".kindN").hasClass("selected")){    /*最近更新*/
+                if($(".avkAll").hasClass("aa")){
+                    $(".kindN").click();
+                }else{
+                    var kind = $(".movieKind .aa").text();
+                    $.ajax({
+                        url:"/ackindl",
+                        type:"get",
+                        data:{k:kind},
+                        success:function(data,status){
+                            if(status == "success"){
+                                $(".content .view ul").empty();
+                                $(".pages li").remove(".page");
+                                var dl = Math.ceil(data.length/20);
+                                console.log(dl);
+                                if(dl == 1){
+                                    $(".prePage,.nextPage").css({"display":"none"})
+                                }
+                                console.log(dl);
+                                page(dl,"/ackindl");
+                                var dd =data.doc;
+                                auto(dd)
+                                mode()
+                            }
+                        },
+                        error:function(err){
+                            console.log("reqCountry:"+err)
+                        }
+                    })
+                }
+            }else{
+                if($(".avkAll").hasClass("aa")){   /*oibip评分*/
+                    $(".kindS").click();
+                }else{
+                    var kind = $(".movieKind .aa").text();
+                    $.ajax({
+                        url:"/ackinds",
+                        type:"get",
+                        data:{k:kind},
+                        success:function(data,status){
+                            if(status == "success"){
+                                $(".content .view ul").empty();
+                                $(".pages li").remove(".page");
+                                var dl = Math.ceil(data.length/20);
+                                console.log(dl);
+                                if(dl == 1){
+                                    $(".prePage,.nextPage").css({"display":"none"})
+                                }
+                                console.log(dl);
+                                page(dl,"/ackinds");
+                                var dd =data.doc;
+                                auto(dd)
+                                mode()
+                            }
+                        },
+                        error:function(err){
+                            console.log("reqCountry:"+err)
+                        }
+                    })
+                }
+            }
+
+        })
+
+        $(".avkAll").on("click",function(){
+            if($(".kindN").hasClass("selected")){    /*最近更新*/
+                if($(".avcAll").hasClass("aa")){
+                    $(".kindN").click();
+                }else{
+                    var countryName = $(".movieCountry .aa").text();
+                    $.ajax({
+                        url:"/accountryl",
+                        type:"get",
+                        data:{cn:countryName},
+                        success:function(data,status){
+                            if(status == "success"){
+                                $(".content .view ul").empty();
+                                $(".pages li").remove(".page");
+                                var dl = Math.ceil(data.length/20);
+                                console.log(dl);
+                                if(dl == 1){
+                                    $(".prePage,.nextPage").css({"display":"none"})
+                                }
+                                console.log(dl);
+                                page(dl,"/accountryl");
+                                var dd =data.doc;
+                                auto(dd)
+                                mode()
+                            }
+                        },
+                        error:function(err){
+                            console.log("reqCountry:"+err)
+                        }
+                    })
+                }
+            }else{
+                if($(".avcAll").hasClass("aa")){   /*oibip评分*/
+                    $(".kindS").click();
+                }else{
+                    var countryName = $(".movieCountry .aa").text();
+                    $.ajax({
+                        url:"/accountrys",
+                        type:"get",
+                        data:{cn:countryName},
+                        success:function(data,status){
+                            if(status == "success"){
+                                $(".content .view ul").empty();
+                                $(".pages li").remove(".page");
+                                var dl = Math.ceil(data.length/20);
+                                console.log(dl);
+                                if(dl == 1){
+                                    $(".prePage,.nextPage").css({"display":"none"})
+                                }
+                                console.log(dl);
+                                page(dl,"/accountrys");
+                                var dd =data.doc;
+                                auto(dd)
+                                mode()
+                            }
+                        },
+                        error:function(err){
+                            console.log("reqCountry:"+err)
+                        }
+                    })
+                }
+            }
+
+        })
+
+    });
+</script>
+<script >
+
+    $(function(){
+        $(".mode1").on("click",function(){
+            $(this).addClass("selected").siblings().removeClass("selected")
+            $(".mode1").css({"background":"url('/img/icons.png')-346px -922px"}).siblings().css({"background":"url('/img/icons.png')-282px -986px"})
+            $(".view ul li").addClass("v10").removeClass("v1")
+            $(".view ul li .text").addClass("v20").removeClass("v2")
+            $(".view ul li .img-ani").addClass("v30").removeClass("v3")
+            $(".view ul li .text .avBottom .avPlayCount").addClass("v4")
+            $(" .view ul li .text p,.view ul li .text .summary").show();
+        })
+        $(".mode2").on("click",function(){
+            $(this).addClass("selected").siblings().removeClass("selected")
+            $(".mode2").css({"background":"url('/img/icons.png')-346px -986px"}).siblings().css({"background":"url('/img/icons.png')-282px -922px"})
+            $(".view ul li").addClass("v1").removeClass("v10")
+            $(".view ul li .text").addClass("v2").removeClass("v20")
+            $(".view ul li .img-ani").addClass("v3").removeClass("v30")
+            $(".view ul li .text .avBottom .avPlayCount").removeClass("v4")
+            $(" .view ul li .text p,.view ul li .text .summary").hide()
+        })
+
+
+        $(".hot-movie-sort ul li:gt(2):lt(10),.hot-tv-sort ul li:gt(2):lt(10),.hot-ac-sort ul li:gt(2):lt(10)").find(".number").css({"background":"#b8c0cc"})
+        /* 标签事件*/
+        $(".hotMovieMenu ul").delegate(".b1","mouseover",function(){
+            if($(this).hasClass("aa")){}
+            else{
+                $(this).css({"background":"#5CD2A7","color":"#fff"})
+            }
+        }).delegate(".b1","mouseout",function(){
+            if($(this).hasClass("aa")){}
+            else{
+                $(this).css({"background":"#fff","color":"#333"})
+            }
+        }).delegate(".b1","click",function(){
+            $(this).css({"background":"#5CD2A7","color":"#fff"}).addClass("aa").siblings().removeClass("aa").css({"background":"#fff","color":"#333"})
+        });
+        $(".{{k}}").click();
+        /* 按最近更新，按评分*/
+        $(".kindS i").hide()
+        $(".kns").delegate("div","click",function(){
+            $(this).css({"font-weight":"600","color":"#E94646"}).addClass("selected").find("i").show();
+            $(this).siblings().css({"font-weight":"500","color":"#333"}).removeClass("selected").find("i").hide();
+            $(".avcAll,.avkAll").css({"background":"#5CD2A7","color":"#fff"}).addClass("aa").siblings().removeClass("aa").css({"background":"#fff","color":"#333"});
+        })
+
+        /* 推荐区事件处理*/
+        $(".hotRecommend ul").delegate("li","mouseenter",function(){
+            $(this).find(".mvnName a").css({"color":"#F31515"});
+            $(this).find(".kePlay").show()
+        }).delegate("li","mouseleave",function(){
+            $(this).find(".mvnName a").css({"color":"#333"});
+            $(this).find(".kePlay").hide()
+        })
+        $(".gg a").on("mouseover",function(){
+            $(".gg .mvnName a").css({"color":"#F31515"})
+        }).on("mouseout",function(){
+            $(".gg .mvnName a").css({"color":"#333"})
+        })
+    })
+
+</script>

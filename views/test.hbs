@@ -1,0 +1,319 @@
+
+<style type="text/css">
+    *{margin:0;padding:0;list-style-type:none;}
+    a,img{border:0;}
+    body{font:12px/180% Arial, Helvetica, sans-serif, "宋体";}
+    .clr:before,.clr:after{content:''; display:table;}
+    .clr:after{clear:both;}
+    .clr{*zoom:1;}
+    /* film_focus */
+    .film_focus{width:1000px;height:310px;overflow:hidden;position:relative;margin:20px auto;}
+    .film_focus .film_focus_imgs_wrap{width:722px;height:310px;background:url(images/T16WJqXaXeXXXXXXXX-32-32.gif) no-repeat center center;}
+    .film_focus ul.film_focus_imgs{width:722px;height:9999em;position:absolute;left:0;top:0;}
+    .film_focus ul.film_focus_imgs li{height:310px;overflow:hidden;}
+    .film_focus .film_focus_desc h3{
+        height:45px;line-height:45px;overflow:hidden;position:absolute;left:0;bottom:0;background:rgba(0,0,0,.5);color:#fff;width:100%;padding-left:24px;z-index:99;font-size:16px;
+        filter:progid:DXImageTransform.Microsoft.gradient(enabled='true',startColorstr='#7F000000',endColorstr='#7F000000');
+    }
+    .film_focus ul.film_focus_nav{width:278px;height:310px;background:#424242;position:absolute;right:0;_right:-45px;top:0;z-index:100;}
+    .film_focus ul.film_focus_nav li{height:68px;background:url(images/T1WiB5Xf0EXXXXXXXX-1-75.png) repeat-x;margin:1px 1px 1px 0;padding:8px 0 0 82px;position:relative;}
+    .film_focus ul.film_focus_nav li.cur{background:url(images/T19yB9Xm0BXXXXXXXX-296-79.png) no-repeat;width:221px;left:-19px;padding:10px 0 0 101px;_background:url(images/T19UakXlxiXXXXXXXX-296-79.gif) no-repeat 0 0;}
+    .film_focus ul.film_focus_nav li img{position:absolute;left:24px;top:8px;}
+    .film_focus ul.film_focus_nav li.cur img{left:42px;}
+    .film_focus ul.film_focus_nav li h4{color:#fff;}
+    .film_focus ul.film_focus_nav li p{color:#B9B9B9;line-height:1.8em;}
+</style>
+
+<canvas width="1349" height="404"></canvas>
+<div class="film_focus">
+
+    <div class="film_focus_imgs_wrap">
+        <ul class="film_focus_imgs">
+            <li><a target="_blank" href="http://www.17sucai.com/"><img width="722" height="310" src="images/T1GMb8XfFhXXb_eDfQ-722-310.jpg" alt="电影大放“价”啦：全场0.11元，疯狂开抢！" /></a></li>
+            <li><a target="_blank" href="http://www.17sucai.com/"><img width="722" height="310" src="images/T14MvUXehnXXb_eDfQ-722-310.jpg" alt="《二次曝光》：幻觉世界，为所欲为" /></a></li>
+            <li><a target="_blank" href="http://www.17sucai.com/"><img width="722" height="310" src="images/T1z3z1Xk8hXXb_eDfQ-722-310.jpg" alt="《敢死队2》：硬汉全明星联队，火力全开" /></a></li>
+            <li><a target="_blank" href="http://www.17sucai.com/"><img width="722" height="310" src="images/T1EKYJXd0pXXb_eDfQ-722-310.jpg" alt="《复仇者联盟》：集结地球最强超级英雄，口碑票房统统爆棚" /></a></li>
+        </ul>
+    </div>
+
+    <div class="film_focus_desc">
+        <h3>电影大放“价”啦：全场0.11元，疯狂开抢</h3>
+        <ul class="film_focus_nav">
+            <li class="cur">
+                <a target="_blank" href="http://www.17sucai.com/"><img width="45" height="60" src="images/T1VL6ZXb8oXXaRyyzg-45-60.jpg" alt="电影狂欢" /></a>
+                <h5>电影狂欢</h5>
+
+                <p>乐视专场</p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.17sucai.com/"><img width="45" height="60" src="images/T1epz2XbxiXXaRyyzg-45-60.jpg" alt="二次曝光" /></a>
+                <h4>二次曝光</h4>
+
+                <p>李玉作品</p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.17sucai.com/"><img width="45" height="60" src="images/T1W061XjhkXXaRyyzg-45-60.jpg" alt="敢死队2" /></a>
+                <h4>敢死队2</h4>
+
+                <p>硬汉大集结</p>
+            </li>
+            <li>
+                <a target="_blank" href="http://www.17sucai.com/"><img width="45" height="60" src="images/T1jl_MXbxmXXaRyyzg-45-60.jpg" alt="复仇者联盟" /></a>
+                <h4>复仇者联盟</h4>
+
+                <p>超强集结号</p>
+            </li>
+        </ul>
+    </div>
+
+</div><!--焦点图END-->
+
+
+<script>
+    $(function(){
+        var canvas = document.querySelector('canvas'),
+                ctx = canvas.getContext('2d');
+        canvas.width = window.innerWidth;
+        canvas.height = window.innerHeight;
+        ctx.lineWidth = .3;
+        ctx.strokeStyle = (new Color(150)).style;
+
+        var mousePosition = {
+            x: 30 * canvas.width / 100,
+            y: 30 * canvas.height / 100
+        };
+
+        var dots = {
+            nb: 150,
+            distance: 50,
+            d_radius: 100,
+            array: []
+        };
+
+        function colorValue(min) {
+            return Math.floor(Math.random() * 255 + min);
+        }
+
+        function createColorStyle(r,g,b) {
+            return 'rgba(' + r + ',' + g + ',' + b + ', 0.8)';
+        }
+
+        function mixComponents(comp1, weight1, comp2, weight2) {
+            return (comp1 * weight1 + comp2 * weight2) / (weight1 + weight2);
+        }
+
+        function averageColorStyles(dot1, dot2) {
+            var color1 = dot1.color,
+                    color2 = dot2.color;
+
+            var r = mixComponents(color1.r, dot1.radius, color2.r, dot2.radius),
+                    g = mixComponents(color1.g, dot1.radius, color2.g, dot2.radius),
+                    b = mixComponents(color1.b, dot1.radius, color2.b, dot2.radius);
+            return createColorStyle(Math.floor(r), Math.floor(g), Math.floor(b));
+        }
+
+        function Color(min) {
+            min = min || 0;
+            this.r = colorValue(min);
+            this.g = colorValue(min);
+            this.b = colorValue(min);
+            this.style = createColorStyle(this.r, this.g, this.b);
+        }
+
+        function Dot(){
+            this.x = Math.random() * canvas.width;
+            this.y = Math.random() * canvas.height;
+
+            this.vx = -.5 + Math.random();
+            this.vy = -.5 + Math.random();
+
+            this.radius = Math.random() * 2;
+
+            this.color = new Color();
+            console.log(this);
+        }
+
+        Dot.prototype = {
+            draw: function(){
+                ctx.beginPath();
+                ctx.fillStyle = this.color.style;
+                ctx.arc(this.x, this.y, this.radius, 0, Math.PI * 2, false);
+                ctx.fill();
+            }
+        };
+
+        function createDots(){
+            for(i = 0; i < dots.nb; i++){
+                dots.array.push(new Dot());
+            }
+        }
+
+        function moveDots() {
+            for(i = 0; i < dots.nb; i++){
+
+                var dot = dots.array[i];
+
+                if(dot.y < 0 || dot.y > canvas.height){
+                    dot.vx = dot.vx;
+                    dot.vy = - dot.vy;
+                }
+                else if(dot.x < 0 || dot.x > canvas.width){
+                    dot.vx = - dot.vx;
+                    dot.vy = dot.vy;
+                }
+                dot.x += dot.vx;
+                dot.y += dot.vy;
+            }
+        }
+
+        function connectDots() {
+            for(i = 0; i < dots.nb; i++){
+                for(j = 0; j < dots.nb; j++){
+                    i_dot = dots.array[i];
+                    j_dot = dots.array[j];
+
+                    if((i_dot.x - j_dot.x) < dots.distance && (i_dot.y - j_dot.y) < dots.distance && (i_dot.x - j_dot.x) > - dots.distance && (i_dot.y - j_dot.y) > - dots.distance){
+                        if((i_dot.x - mousePosition.x) < dots.d_radius && (i_dot.y - mousePosition.y) < dots.d_radius && (i_dot.x - mousePosition.x) > - dots.d_radius && (i_dot.y - mousePosition.y) > - dots.d_radius){
+                            ctx.beginPath();
+                            ctx.strokeStyle = averageColorStyles(i_dot, j_dot);
+                            ctx.moveTo(i_dot.x, i_dot.y);
+                            ctx.lineTo(j_dot.x, j_dot.y);
+                            ctx.stroke();
+                            ctx.closePath();
+                        }
+                    }
+                }
+            }
+        }
+
+        function drawDots() {
+            for(i = 0; i < dots.nb; i++){
+                var dot = dots.array[i];
+                dot.draw();
+            }
+        }
+
+        function animateDots() {
+            ctx.clearRect(0, 0, canvas.width, canvas.height);
+            moveDots();
+            connectDots();
+            drawDots();
+
+            requestAnimationFrame(animateDots);
+        }
+
+        $('canvas').on('mousemove', function(e){
+            mousePosition.x = e.pageX;
+            mousePosition.y = e.pageY;
+        });
+
+        $('canvas').on('mouseleave', function(e){
+            mousePosition.x = canvas.width / 2;
+            mousePosition.y = canvas.height / 2;
+        });
+
+        createDots();
+        requestAnimationFrame(animateDots);
+    });
+</script>
+<script type="text/javascript">
+    (function(A){
+        A.fn.th_video_focus=function(E){
+
+            var G={
+                actClass:"cur",
+                navContainerClass:".focus_pic_preview",
+                focusContainerClass:".focus_pic",
+                animTime:600,
+                delayTime:5000
+            };
+
+            if(E){
+                A.extend(G,E)
+            }
+
+            var C=G.actClass, D=G.navContainerClass, B=G.focusContainerClass, F=G.animTime, H=G.delayTime, I=null;
+
+            return this.each(function(){
+
+                var O=A(this), M=A(D+" li",O), P=A(B+" li",O), L=M.length, K=O.height();
+
+                function N(R){
+                    var V=K*R*-1;
+                    var U=A(B+" li",O), W=null, T=null;
+                    for(var S=0;S<=R;S++){
+                        W=U.eq(S);
+                        T=W.find('script[type="text/templ"]');
+                        if(T.length>0){
+                            W.html(T.html())
+                        }
+                    }
+                    A(B,O).stop().animate({top:V},F,function(){
+                        var Y=O.find("h3"), X=Y.height();
+                        Y.height(0).html(A(B+" li").eq(R).find("img").attr("alt")).animate({height:X},600)
+                    });
+                    A(D+" li").eq(R).addClass(C).siblings().removeClass(C)
+                }
+
+                function Q(){
+                    if(I){
+                        clearInterval(I)
+                    }
+                    I=setInterval(function(){
+                        var R=A(D+" li."+C).index();
+                        N((R+1)%L)
+                    },H)
+                }
+
+                O.hover(function(){
+                    if(I){
+                        clearInterval(I)
+                    }
+                },function(){
+                    Q()
+                });
+
+                var J=null;
+
+                M.hover(function(){
+
+                    var R=A(this).index();
+
+                    if(I){
+                        clearInterval(I)
+                    }
+                    J=setTimeout(function(){
+                        N(R)
+                    },300)
+                },function(){
+                    if(J){
+                        clearTimeout(J)
+                    }
+                    Q()
+                }).click(function(T){
+                    var R=A(this).index(), S=P.eq(R).find("a");
+                    if(document.uniqueID||window.opera){
+                        S[0].click();
+                        T.stopPropagation();
+                        T.preventDefault()
+                    }
+                });
+
+                Q()
+
+            })
+        }
+
+    })(jQuery);
+
+    $(function(){
+        //第二个焦点图
+        $(".film_focus").th_video_focus({
+            navContainerClass:".film_focus_nav",
+            focusContainerClass:".film_focus_imgs",
+            delayTime:3000
+        });
+
+    });
+</script>
+

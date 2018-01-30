@@ -1,0 +1,306 @@
+<style>
+    body{font-size:10px;}
+    #a1{height:500px;}
+    .container{width:90%}
+    .play{margin-bottom: 3.5rem;}
+    .p1{font-size:1.8rem;margin-top:5rem}
+    .location{color:#999;font-size:1.3rem;display: block;overflow: hidden}
+    .location li{float:left;margin-left:0.5%}
+
+    .col-md-4{padding-left: 0px;}
+    .h{color:#404040;width:90%;height:0.1rem;position: absolute;top:35px;background:#404040;}
+    .hx2{color:#99CC66;width:90%;height:0.1rem;background:#99CC66;margin-bottom: 2rem;margin-top:1rem}
+    .scVideo{background:#333;color:#fff;position: relative;left:1rem;padding-left:1rem}
+    .scRight1{overflow: hidden;width:100%;}
+    .adl,.v{
+        width: 22%;
+        height: 3rem;
+        float: left;
+        font-size: 1.5rem;
+        text-align: center;
+        line-height: 3rem;
+        cursor: pointer;
+    }
+    .avDetail,.vote{height:464px;overflow: hidden;text-overflow:ellipsis;margin-left: 1rem;
+    }
+    .vote{padding-top:1rem}
+
+    .avDetail ul li{margin-top:8px;display: -webkit-box;
+        -webkit-line-clamp: 8;
+        -webkit-box-orient: vertical;}
+    .detail1 a img{width:9rem;height:10rem;border-radius: 0.2rem}
+    .avDetail ul li span{font-size: 13px;color:#fff}
+    .avDetail ul li a {color:#27A300;font-size: 14px;}
+    .avDetail ul li a:hover{color:coral}
+    .comment{margin-top:18px;}
+    .user1,.user2{border-radius:5px;border-bottom: 1px #C0C0C0 dashed}
+    .user1 span:nth-child(2),.user2 span:nth-child(2){color:#99CC66;font-size:1.4rem;font-weight: 600}
+    .ctime,.userComment1,.userComment2{color:#C0C0C0}
+    .user2{margin-top:10px;}
+    .user1 img,.user2 img{width:50px;height:50px;border-radius:25px;border:1px #ccc solid;}
+    .ctime{float:right;margin-right:10px;}
+    .userComment1,.userComment2{padding:10px 5px 10px 50px}
+    .commentTop{color:#E74851;font-weight: 900}
+    .cont{height:38.8rem;background: #F5F5F5}
+    .cont-box,.cont-box2{width:100%;height:50px;border:1px #99cc66 solid;border-radius: 5px }
+    .cont-box2{height:8rem;width:70%}
+    .cont-box .text,.cont-box2 .text{    width: 100%;
+        height: 100%;
+        color: rgb(153, 153, 153);
+        font-family: 微软雅黑;
+        font-size: 12px;
+        resize: none;
+        float: left;
+        border-radius: 5px;
+        padding: 5px 10px;
+        border-width: initial;
+        border-style: none;
+        border-color: initial;
+        border-image: initial;
+        outline: none;}
+    .submit,.submit2{    width: 67px;
+        height: 30px;
+        border: 1px solid #99CC66;
+        text-align: center;
+        line-height: 30px;
+        background: #99CC66;
+        border-radius: 4px;
+        float: right;
+        margin-right: 10px;
+        cursor: pointer;}
+    .submit2{margin-right: 33%}
+    .userComment{width:70%;margin-top:4.3rem}
+
+    .mvn ul li{width:21.5%;height:160px;float:left;margin-left:3%;}
+    .mvn ul li .image{display:block;width:100%;height:120px;border-radius: 5px;overflow: hidden;position: relative}
+    .mvn ul li img{width:100%;height:120px;}
+    .mvnName a{font-size:12px;}
+    .hotRecommend{padding-left:4%;}
+    .hotRecommend .title{font-size:18px;}
+    .gg img{width:100%;height:170px;}
+    .gg a{display:block;width:88%;border-radius: 5px;overflow: hidden;margin-top:8px;position: relative}
+    .kept{width:100%;height:33px;position: absolute;left:0;top:73.5%;background: url("/img/lisBg.png")0 -6px repeat-x;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;}
+    .keKind{position: absolute; border-top-right-radius: 5px;top:-20px;left:63%;background:url("/img/shade.png")-10px -160px;}
+    .keTime{border-bottom-right-radius: 5px;float:right;margin-top:6%}
+    .kePlay{width:15%;height:20px;background:url("/img/icons.png")-661px -215px;float:left;margin:5% 4%;display:none}
+</style>
+<div class="container">
+    <div class="row">
+        <div class="header">
+            <p class="p1"><span>{{name}}</span></p>
+            <ul class="location">
+                <li>您现在的位置:</li>
+                <li> 首页 /</li>
+                <li> 动画 /</li>
+                <li> {{country}} </li>
+                <li>{{year}}</li>
+                <li>AV{{id}}</li>
+            </ul>
+        </div>
+
+        <div class="play col-md-12">
+            <div id="a1" class="col-md-8">
+            </div>
+            <div class="col-md-4 scVideo">
+               <div class="scRight1">
+                   <div class="adl">视频简介</div>
+                   <div class="v">用户评论</div>
+               </div>
+                <div class="h"></div>
+                <div class="scRight2">
+                    <div class="avDetail">
+                                <p><strong>{{name}}</strong></p>
+                                <div class="detail1">
+                                    <a href=""><img src={{poster}} alt=""></a>
+                                    <div class="sc">
+
+                                    </div>
+                                </div>
+                                <ul>
+                                    <li>主演：</li>
+                                    <li>标签：</li>
+                                    <li>地区：</li>
+                                    <li>导演：</li>
+                                    <li>年份：<a href="">{{year}}</a></li>
+                                    <li>更新时间：<span>{{date}}</span></li>
+                                    <li>影片剧情：<span>{{summary}}</span></li>
+                                </ul>
+                    </div>
+                    <div class="vote">
+                        <p><strong>oibip评分</strong></p>
+                        <span class="star"></span>
+                        <span>&nbsp;{{score}}&nbsp;({{commentCount}}人评价)</span>
+                        <div class="comment">
+                            <p class="commentTop">最新oibiper评论：</p>
+                            <div class="user1">
+                                <img src="/img/bac3.jpeg" alt="">
+                                <span>王二狗：</span>
+                                <span class="ctime">2017-2-5</span>
+                                <div class="userComment1">这电影蛮好看的，推荐一下</div>
+                            </div>
+                            <div class="user2">
+                                <img src="/img/bac3.jpeg" alt="">
+                                <span>王二狗：</span>
+                                <span class="ctime">2017-2-5</span>
+                                <div class="userComment2">这电影蛮好看的，推荐一下</div>
+                            </div>
+                            <div class="user2">
+                                <img src="/img/bac3.jpeg" alt="">
+                                <span>王二狗：</span>
+                                <span class="ctime">2017-2-5</span>
+                                <div class="userComment2">这电影蛮好看的，推荐一下</div>
+                            </div>
+                            <div class="cont-box">
+                                <textarea name="" class="text"></textarea>
+                            </div>
+                            <div class="submit">发表评论</div>
+                        </div>
+                    </div>
+
+                </div>
+            </div>
+        </div>
+        <div class="recommend">
+            <div class="row">
+                <div class="hotRecommend col-md-9">
+                    <div class="title">Oibip热门</div>
+                    <div class="mvn">
+                        <ul>
+
+                        </ul>
+                    </div>
+                </div>
+                <div class="gg col-md-3">
+                    <div class="title">特别推荐</div>
+                </div>
+
+            </div>
+        </div>
+        <div class="hx2"></div>
+        <!--评论区-->
+        <div class="cont col-md-9">
+            <p class="commentTop">oibiper评论：</p>
+            <div class="cont-box2">
+                <textarea name="" class="text"></textarea>
+            </div>
+            <div class="submit2">发表评论</div>
+            <div class="userComment">
+                <div class="user1">
+                    <img src="/img/bac3.jpeg" alt="">
+                    <span>王二狗：</span>
+                    <span class="ctime">2017-2-5</span>
+                    <div class="userComment1">这电影蛮好看的，推荐一下</div>
+                </div>
+                <div class="user2">
+                    <img src="/img/bac3.jpeg" alt="">
+                    <span>王二狗：</span>
+                    <span class="ctime">2017-2-5</span>
+                    <div class="userComment2">这电影蛮好看的，推荐一下</div>
+                </div>
+                <div class="user2">
+                    <img src="/img/bac3.jpeg" alt="">
+                    <span>王二狗：</span>
+                    <span class="ctime">2017-2-5</span>
+                    <div class="userComment2">这电影蛮好看的，推荐一下</div>
+                </div>
+            </div>
+
+        </div>
+
+    </div>
+</div>
+<script type="text/javascript" src="/js/jquery.raty.min.js"></script>
+<script type="text/javascript" src="/ckplayer/ckplayer.js" charset="utf-8"></script>
+<script type="text/javascript">
+    var flashvars={
+        f:'http://movie.ks.js.cn/flv/other/1_0.flv',
+        c:0,
+        i:'http://www.ckplayer.com/static/images/cqdw.jpg'
+    };
+
+    var params={bgcolor:'#FFF',allowFullScreen:true,allowScriptAccess:'always',wmode:'transparent'};
+    var obj = document.getElementById("a1"); //取得对象
+    var vWidth =   obj.offsetWidth;
+    var vHeight =   obj.offsetHeight;
+    CKobject.embedSWF('/ckplayer/ckplayer.swf','a1','ckplayer_a1',vWidth,vHeight,flashvars,params);
+    /*
+    CKobject.embedSWF(播放器路径,容器id,播放器id/name,播放器宽,播放器高,flashvars的值,其它定义也可省略);
+    下面三行是调用html5播放器用到的
+    */
+    var video=['http://img.ksbbs.com/asset/Mon_1605/0ec8cc80112a2d6.mp4->video/mp4'];
+    var support=['iPad','iPhone','ios','android+false','msie10+false'];
+    CKobject.embedHTML5('a1','ckplayer_a1',600,400,video,flashvars,support);
+
+
+</script>
+<script>
+
+
+    var doc = {{{doc}}};
+    var actor = "{{actor}}".split("/"),
+            kind = "{{kind}}".split("/"),
+            doctor = "{{doctor}}".split("/"),
+            country = "{{country}}".split("/");
+    $(".star").raty({ readOnly: true, halfShow: true,score: parseFloat(doc.score/2) }).css({"margin-left":"50px"});
+    for(var i in actor){
+        $(".avDetail ul li:nth-child(1)").append("<a href=''>"+actor[i]+'<span> / </span>'+"</a>" )
+    }
+    for(var i in kind){
+        $(".avDetail ul li:nth-child(2)").append("<a href=''>"+kind[i]+'<span> / </span>'+"</a>")
+    }
+    for(var i in country){
+        $(".avDetail ul li:nth-child(3)").append("<a href=''>"+country[i]+'<span> / </span>'+"</a>")
+    }
+    for(var i in doctor){
+        $(".avDetail ul li:nth-child(4)").append("<a href=''>"+doctor[i]+'<span> / </span>'+"</a>")
+    }
+
+    $(".avDetail ul li:nth-child(1)").find("span").last().remove();
+    $(".avDetail ul li:nth-child(2)").find("span").last().remove();
+    $(".avDetail ul li:nth-child(3)").find("span").last().remove();
+    $(".avDetail ul li:nth-child(4)").find("span").last().remove();
+    $(".adl").on("click",function(){
+        $(this).css({"color":"#FF7800"}).siblings().css({"color":"#fff"})
+        $(".avDetail").show().siblings().hide();
+    })
+    $(".v").on("click",function(){
+        $(this).css({"color":"#FF7800"}).siblings().css({"color":"#fff"})
+        $(".vote").show().siblings().hide();
+    })
+    $(".adl").click()
+
+    var j = {{{j}}}
+    for(i = 0;i<j.length;i++){
+        $(".mvn ul").append(
+                '<li>'+
+                '<a href="" class="image"><img src="'+j[i].poster+'" alt="">' +
+                '<div class="kept">'+
+                '<div class="kePlay"></div>'+
+                '<div class="keTime">'+j[i].playTime+'</div>'+
+                '</div>'+
+                '</a>'+
+
+                '<div class="mvnName"><a href="">'+j[i].name+'</a></div>'+
+                '</li>'
+        )
+    }
+    var jj = {{{jj}}};
+    $(".gg").append(
+            '<a href="" class="image"><img src="'+jj[0].poster+'" alt="">' +
+            '</a>'+
+            '<div class="mvnName"><a href="">'+jj[0].name+'</a></div>'
+    )
+    /* 推荐区事件处理*/
+    $(".hotRecommend ul").delegate("li","mouseenter",function(){
+        $(this).find(".mvnName a").css({"color":"#F31515"});
+        $(this).find(".kePlay").show()
+    }).delegate("li","mouseleave",function(){
+        $(this).find(".mvnName a").css({"color":"#333"});
+        $(this).find(".kePlay").hide()
+    })
+    $(".gg a").on("mouseover",function(){
+        $(".gg .mvnName a").css({"color":"#F31515"})
+    }).on("mouseout",function(){
+        $(".gg .mvnName a").css({"color":"#333"})
+    })
+</script>

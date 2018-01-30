@@ -1,0 +1,237 @@
+<link rel="stylesheet" href="/css/index.css">
+<style>
+    body{margin-top:50px;}
+
+
+    .mPoster img{height:300px;width:100%}
+    .movieMessage{height:300px;background:#f5f5f5;overflow: hidden;text-overflow:ellipsis;
+    }
+    .movieMessage ul li{color:#666;margin-top:8px;display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;}
+    .movieMessage ul li span{font-size: 13px;color:#666}
+    .movieMessage ul li a {color:#27A300;font-size: 14px;}
+    .movieMessage ul li a:hover{color:coral}
+    .comment{margin-top:18px;}
+    .user1,.user2{border-radius:5px}
+    .user2{margin-top:10px;}
+    .user1 img,.user2 img{width:50px;height:50px;border-radius:25px;border:1px #ccc solid;box-shadow: 2px 2px 10px red}
+    .ctime{float:right;margin-right:10px;}
+    .userComment1,.userComment2{padding:10px 5px 10px 50px}
+    .commentTop{color:#E74851;font-weight: 900}
+
+
+    .playList .playMenu ul li{float:left;border: 1px #ddd solid;padding:10px;}
+    .playList .playMenu ul li:nth-child(1){font-weight: 800;border-top:none;border-left:none}
+    .playList .playMenu ul li:not(:nth-child(1)){cursor: pointer;}
+    .playMenu{overflow: hidden}
+    .playUrl{width:100%;background: #25354C;height:100px;overflow: hidden;text-align: center;}
+    .playUrl .airUrl a,.playUrl .baiduUrl .b1{display:block;float:left;width:200px;height:40px;border:1px #761c19 solid;background:#f5f5f5;margin:25px 50px;overflow: hidden;text-overflow:ellipsis;display: -webkit-box;
+        -webkit-line-clamp: 5;
+        -webkit-box-orient: vertical;line-height: 40px;color:black;border-radius:5px;font-weight: bold}
+    .playUrl .airUrl a:hover,.playUrl .b1:hover{background:midnightblue;color:white}
+    .tqm{float:left;margin-left: -27px;margin-top:35px;}
+    .tqm a:hover{color:#E74851}
+</style>
+<div class="container">
+    <div class="tip row">
+            <div class="tipLeft col-md-12">
+                <ol class="breadcrumb">
+                    您现在的位置:
+                    <li>首页</li>
+                    <li>动画</li>
+                    <li>{{name}}</li>
+                </ol>
+            </div>
+    </div>
+    <div class="movieDetail row">
+            <div class="mPoster col-md-3"><img src={{poster}} alt=""></div>
+            <div class="movieMessage col-md-5">
+                <p><strong>{{name}}</strong></p>
+                <ul>
+                    <li>主演：</li>
+                    <li>标签：</li>
+                    <li>地区：</li>
+                    <li>导演：</li>
+                    <li>年份：<a href="">{{year}}</a></li>
+                    <li>更新时间：<span>{{date}}</span></li>
+                    <li>影片剧情：<span>{{summary}}</span></li>
+                </ul>
+
+            </div>
+            <div class="vote col-md-4">
+                    <p><strong>oibip评分</strong></p>
+                    <span class="star"></span>
+                    <span>&nbsp;{{score}}&nbsp;({{commentCount}}人评价)</span>
+                <div class="comment">
+                    <p class="commentTop">最新oibiper评论：</p>
+                    <div class="user1">
+                        <img src="/img/bac3.jpeg" alt="">
+                        <span>王二狗：</span>
+                        <span class="ctime">2017-2-5</span>
+                        <div class="userComment1">这电影蛮好看的，推荐一下</div>
+                    </div>
+                    <div class="user2">
+                        <img src="/img/bac3.jpeg" alt="">
+                        <span>王二狗：</span>
+                        <span class="ctime">2017-2-5</span>
+                        <div class="userComment2">这电影蛮好看的，推荐一下</div>
+                    </div>
+                </div>
+            </div>
+    </div>
+    <div class="playList row">
+        <div class="playMenu">
+            <ul>
+                <li>播放列表：</li>
+                <li>云视频</li>
+                <li>百度云</li>
+            </ul>
+        </div>
+        <div class="playUrl">
+            <div class="airUrl">
+                <a href="/movie/detail/playNow/{{id}}?id={{id}}">{{name}}HD1080p</a>
+            </div>
+            <div class="baiduUrl">
+                <a href="" class="b1">{{name}}百度云</a>
+                <div class="tqm"> <strong>提取码:</strong>&nbsp;<small>此内容已隐藏，请<a href="">登录</a>/<a href="">注册</a>后查看</small></div>
+
+            </div>
+        </div>
+    </div>
+    <div class="recommend row">
+        <div class="airRecommend">
+            <div class="row hot-movies">
+                <div class="movie-nav col-md-12" style="font-size:20px;color:#fff;background:darkred;">
+                   猜你喜欢
+                </div>
+                <div class="col-md-9 col-sm-9 hot-re-ifo" style="background:#ffffff">
+                    <ul>
+
+                    </ul>
+                </div>
+        </div>
+        <div class="hotRecommend">
+            <div class="col-md-3 col-sm-3 hot-movie-sort">
+                <p class="hot-movie-right" style="font-size: large;font-family: '微软雅黑', '宋体', Arial, Helvetica, sans-serif;text-align: center;width: 260px;height:50px;line-height: 50px;border-bottom: 1px #f0ad4e solid"><a href="">热门电影</a></p>
+                <ul>
+                    <li >
+                        <div style="position:relative;width:100%;height:170px;">
+                            <div class="number">1</div>
+                            <a href="" class="a"><img src="img/zhuijizhe.jpg" alt="" style="width:100%;height:170px;"></a>
+                            <div class="hot-detail" style="">
+                                <p>导演：王小硕</p>
+                                <p>主演：王小硕</p>
+                                <p>年份：1994</p>
+                                <p>影片简介：在一个久远的年代，一个从天而降的传说预言之子，究竟能在风暴大陆上。。。。。</p>
+                            </div>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="number">2</div>
+                        <a href="" class="a">【犯罪/恐怖】杀人回忆 1994</a>
+                        <div class="detail-right">
+                            <img src="img/hot.gif" alt="">
+                            <small>992</small>
+                        </div>
+
+                    </li>
+                    <li>
+                        <div class="number">3</div>
+                        <a href="" class="a">【犯罪/恐怖】杀人回忆 1994</a>
+                        <div class="detail-right">
+                            <img src="img/hot.gif" alt="">
+                            <small>555</small>
+                        </div>
+                    </li>
+                    <li>
+                        <div class="number">4</div>
+                        <a href="" class="a">【犯罪/恐怖】杀人回忆 1994</a>
+                    </li>
+                    <li>
+                        <div class="number">5</div>
+                        <a href="" class="a">【犯罪/恐怖】杀人回忆 1994</a>
+                    </li>
+                    <li>
+                        <div class="number">6</div>
+                        <a href="" class="a">【犯罪/恐怖】杀人回忆 1994</a>
+                    </li>
+                    <li>
+                        <div class="number">7</div>
+                        <a href="" class="a">【犯罪/恐怖】杀人回忆 1994</a>
+                    </li>
+                    <li>
+                        <div class="number">8</div>
+                        <a href="" class="a">【犯罪/恐怖】杀人回忆 1994</a>
+                    </li>
+                    <li>
+                        <div class="number">9</div>
+                        <a href="" class="a">【犯罪/恐怖】杀人回忆 1994</a>
+                    </li>
+                    <li>
+                        <div class="number">10</div>
+                        <a href="" class="a">【犯罪/恐怖】杀人回忆 1994</a>
+                    </li>
+
+                </ul>
+            </div>
+        </div>
+    </div>
+    </div>
+</div>
+<script>
+    $(function(){
+        var actor = "{{actor}}".split("，"),
+                kind = "{{kind}}".split("/"),
+                doctor = "{{doctor}}".split("/"),
+                country = "{{country}}".split("/");
+        for(var i in actor){
+            $(".movieDetail ul li:nth-child(1)").append("<a href=''>"+actor[i]+'<span> / </span>'+"</a>" )
+        }
+        for(var i in kind){
+            $(".movieDetail ul li:nth-child(2)").append("<a href=''>"+kind[i]+'<span> / </span>'+"</a>")
+        }
+        for(var i in country){
+            $(".movieDetail ul li:nth-child(3)").append("<a href=''>"+country[i]+'<span> / </span>'+"</a>")
+        }
+        for(var i in doctor){
+            $(".movieDetail ul li:nth-child(4)").append("<a href=''>"+doctor[i]+'<span> / </span>'+"</a>")
+        }
+
+            $(".movieDetail ul li").first().find("span").last().remove();
+        $(".movieDetail ul li:nth-child(2)").find("span").last().remove();
+        $(".movieDetail ul li:nth-child(3)").find("span").last().remove();
+        $(".movieDetail ul li:nth-child(4)").find("span").last().remove();
+
+        $(".playMenu ul li:nth-child(2)").css({"border-bottom":"none"});
+        $(".playMenu ul li:nth-child(3)").css({"border-bottom":"1px #ddd solid"});
+
+        $(".airUrl").css({"display":"block"}).siblings().css({"display":"none"});
+        $(".star").raty().css({"margin-left":"50px"});
+        $(".playMenu ul li:nth-child(2)").click(function(){
+            $(".playMenu ul li:nth-child(2)").css({"border-bottom":"none"});
+            $(".playMenu ul li:nth-child(3)").css({"border-bottom":"1px #ddd solid"});
+            $(".airUrl").css({"display":"block"}).siblings().css({"display":"none"});
+        });
+        $(".playMenu ul li:nth-child(3)").click(function(){
+            $(".playMenu ul li:nth-child(2)").css({"border-bottom":"1px #ddd solid"});
+            $(".playMenu ul li:nth-child(3)").css({"border-bottom":"none"});
+            $(".baiduUrl").css({"display":"block"}).siblings().css({"display":"none"});
+        });
+
+        $.ajax({
+            url:"/movie/detail/{{id}}",
+            type:"post",
+            success:function(data,status){
+                if(status == "success"){
+                    console.log(status);
+                    $(".tqm small").html("4596").css({"color":"white","font-wight":"bold"});
+                }
+            },
+            error:function(err){
+                console.log(err);
+            }
+        })
+    })
+</script>

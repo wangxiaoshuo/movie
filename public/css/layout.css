@@ -1,0 +1,111 @@
+
+/* 图片轮播*/
+
+
+.auto-play .auto-img .pic a:not(:first-child){display:none}
+.auto-play .auto-img{width:100%;height:100%;}
+
+.auto-footer ul{padding-left:5%;}
+.auto-footer ul li{width:78px;height:50px;margin-left:10px;float:left;font-size:25px;cursor: pointer;outline: none;border:2px #fff solid;border-radius: 4px;position: relative}
+.auto-footer ul li .mask{position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(255,255,255,0);
+    transition: .2s;
+    z-index: 100;}
+.auto-footer ul li:hover .mask{ background-color: rgba(255,255,255,0.3);}
+.auto-footer ul li:hover{border:2px solid #f25d8e}
+.auto-footer ul li img{display:block;width:100%;height:100%;position: absolute;top:0;left:0}
+.auto-img ul li.on{border:2px solid #f25d8e}
+
+.movie-nav{border-bottom:1px #E94646 solid;height:211px;line-height: 40px;position: relative}
+.avNavLeft{width:100%;height:100px;float:left}
+.kns{width:70%;height:50px;float:left}
+.mode{width:30%;height:50px;float:left}
+.mode li{width:20px;height:20px;line-height:20px;float:left;cursor: pointer;margin-top:25px}
+.mode1{background:url("/img/icons.png") -282px -922px;cursor: pointer;margin-right:10px;}
+.mode1:hover{background:url("/img/icons.png") -346px -922px;cursor: pointer}
+.mode2{background:url("/img/icons.png") -282px -986px;cursor: pointer}
+.mode2:hover{background:url("/img/icons.png") -346px -986px;cursor: pointer}
+.hotTag{width:100%;height:24px;line-height: 24px}
+.hotTag i{display:block;width:24px;height:24px;margin-right:10px;float:left;background:url("/img/icons.png") -83px -1492px no-repeat}
+.movie-nav .kindName{font-size:22px;font-weight: 400;cursor:default;width:100%;height:50px;margin-bottom:10px;}
+.movie-nav .kindName .kindIcon{width:38px;height:39px;float:left;}
+.kIcon1{background:url("/img/icons2.png") -128px -82px;}
+.kIcon2{background:url("/img/icons2.png") -128px -226px;}
+.kIcon3{background:url("/img/icons2.png") -128px -368px;}
+.kIcon4{background:url("/img/icons2.png") -128px -412px;}
+.kIcon5{background:url("/img/icons2.png") -128px -324px;}
+.movie-nav .kindName p{float:left}
+.movie-nav .kindN{position:relative;float:left;margin-top:10px;font-size: 13px;font-weight:600;color:#E94646;cursor: pointer}
+.kindS{
+    position: relative;
+    float: left;
+    cursor: pointer;
+    margin-left: 10px;
+    font-size: 13px;
+    margin-top: 10px;}
+/* 按最近更新，按评分的类*/
+.ls{color:#E94646;}
+
+.movie-nav .hotMovieMenu{float:left;width:100%;line-height: 11px;margin-bottom:10px;}
+.movie-nav a{color:#4C4C4C;}
+.movie-nav a:hover{color:#E94646}
+.movie-nav .hotMovieMenu .movieKind{margin-left:25px;}
+.movie-nav .hotMovieMenu .movieCountry{width:100%;height:25px;margin-left:25px;}
+.movie-nav .hotMovieMenu ul li,.avcAll,.avkAll{
+    float:left;margin-left:8px;
+    text-align: center;
+    border-radius: 12px;
+    background: #fff;
+    border: 1px #ccc solid;
+    padding: 5px 10px;
+    font-size: 12px;
+    margin-top: 9px;
+    cursor: pointer;
+}
+.avcAll,.avkAll{background:#5CD2A7;color:#fff}
+.movie-nav .hotMovieMenu ul li:hover,.avcAll:hover,.avkAll:hover{background:#5CD2A7;color:#fff}
+.shade:hover{cursor:default}
+.s{margin-top:10px;}
+.s3{position: absolute;top:83%;left:43%;color:#E94646}
+
+.avCount{    width: 107px;
+    height: 22px;
+    line-height: 22px;
+    border: 1px #666 solid;
+    float: left;
+    font-size: 11px;
+    margin-top: 10px;
+    margin-left: 44px;
+    color: #666;
+    cursor: pointer;position: relative}
+.avCount:hover .avCount i{}
+.avCount .zz{width:100%;height:100%;position: absolute;background:#000;opacity: 0.1;top:0;left:0;display:none;z-index:22}
+.avCount i{display:block;float:left;width:14px;height:11px;background:url(/img/icons2.png) -146px -508px;margin:5px;}
+.avCount span{color:#ef0404}
+.more{float:left;width:46px;height:22px;font-size:12px;cursor:pointer;margin-left:18px;margin-top:2px;}
+.more i{display:block;float:right;width:10px;height:10px;background:url("/img/icons2.png") -152px -661px;margin-top:13px;margin-right:10px;}
+.more:hover{color:#ef0404;}
+@keyframes xz {
+    from{transform: rotate(0deg)}
+    to{transform: rotate(180deg)}
+}
+@keyframes zx {
+    from{transform: rotate(180deg)}
+    to{transform: rotate(0deg)}
+}
+
+.container{width:90%}
+.auto-play{width:88%;height:300px;overflow: hidden;background-color: #0f0f0f;margin-top:45px;}
+.auto-play .auto-img .pic a img{display:block;width:100%;height:300px;float:left;}
+.auto-img .auto-footer{position: absolute;top:276px;width:88%;height:69px;background:url("/img/shade.png") -10px -110px;opacity: 0.8;}
+
+
+.kept{width:100%;height:33px;position: absolute;left:0;top:73.5%;background: url("/img/lisBg.png") 0 -6px repeat-x;border-bottom-right-radius: 5px;border-bottom-left-radius: 5px;}
+.keKind{position: absolute; border-top-right-radius: 5px;top:-20px;left:63%;background:url("/img/shade.png") -10px -160px;}
+.keTime{border-bottom-right-radius: 5px;float:right;margin-top:6%}
+.kePlay{width:15%;height:20px;background:url("/img/icons.png") -661px -215px;float:left;margin:5% 4%;display:none}
+

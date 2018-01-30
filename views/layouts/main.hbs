@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>{{title}}</title>
+    <link rel="stylesheet" href="/css/bootstrap.min.css">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge,Chrome=1" />
+    <!--[if !IE]><!-->
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <!--<![endif]-->
+    <!--[if gt IE 8]>
+    <script src="https://cdn.bootcss.com/jquery/3.2.1/jquery.min.js"></script>
+    <![endif]-->
+    <!--[if lt IE 9]>
+    　<script src="//cdn.bootcss.com/respond.js/1.4.2/respond.js"></script>
+    　<script src="http://cdn.bootcss.com/html5shiv/3.7.2/html5shiv.min.js"></script>
+    <script src="https://cdn.bootcss.com/jquery/1.12.4/jquery.min.js"></script>
+    <style>
+        .searchContent{behavior: url("/PIE.htc");}
+        .wx,.wx:hover{behavior: url("/PIE.htc");}
+    </style>
+    <![endif]-->
+    <script src="http://apps.bdimg.com/libs/bootstrap/3.2.0/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="/css/main.css">
+    <style>
+
+    </style>
+</head>
+
+<body>
+<nav class="container-fluid">
+    <div class="row">
+        <div class="logo col-md-2 col-sm-2">
+            <img src="/img/logo.png" alt="">
+        </div>
+        <div class="menu col-md-4 col-sm-4">
+            <ul>
+                <li class="menu-home"><em style="background:url(/img/icons.png) -85px -468px;display:block;width:25px;height:25px;float:left;margin-top:12px;"></em>首页</li>
+                <li class="menu-mv">
+                    电影
+                </li>
+                <li class="menu-tv">电视剧</li>
+                <li class="menu-ac">动漫</li>
+                <li class="menu-gm">游戏</li>
+                <li class="menu-xs">舞蹈MV</li>
+            </ul>
+        </div>
+
+        <div class="col-md-2 col-sm-2">
+            <div class="search">
+                <input class="searchContent" type="text"  onblur="if (this.value == '') {this.value = '搜索...';}" onfocus="if (this.value == '搜索...') {this.value = '';}" value="搜索..." placeholder="搜索..." >
+                <button class="submit searchBtn"></button>
+                <div class="searchResult">
+                    <p>oibip搜索结果：<span><em style="">0</em>条记录</span></p>
+                    <ul>
+
+                    </ul>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-2" style="position: relative">
+            <div class="deposit">
+                <span>obip币:</span>
+                <a href="" class="coin">10</a>
+                <a href="/deposit" class="cz">充值</a>
+            </div>
+            <div class="wx">
+                收藏夹
+            </div>
+            <div class="wm">
+                空
+            </div>
+        </div>
+
+        <div class="menuRight col-md-2 col-sm-2">
+            <div class="n">
+                <a href="/login" class="login col-md-4">登录</a>
+                <a href="/register" class="register col-md-4">注册</a>
+            </div>
+            <div class="has">
+                <a href="" class="tx col-md-4">
+                    <img src="/img/bac3.jpeg" alt="">
+                </a>
+                <a href="/user/{{user._id}}?id={{user._id}}" class="cuser col-md-4" title={{user.name}}>{{user.name}}</a>
+                <a href="/logout" class="logout col-md-4">注销</a>
+            </div>
+        </div>
+    </div>
+
+
+</nav>
+<div class="l">
+    {{{body}}}
+</div>
+<!--footer-->
+<div class="footer">
+    <div class="notice">
+        <p>Oibip NOTICE</p>
+        <p>本网站内容仅收集于互联网，本站不承担任何由于内容的合法性及健康性所引起的争议和法律责任。 欢迎大家对网站内容侵犯版权等不合法和不健康行为进行监督和举报</p>
+    </div>
+</div>
+<script src="/js/moment.min.js"></script>
+<script src="/js/jquery.raty.min.js"></script>
+<script>
+
+</script>
+<script>
+$(function(){
+    $.ajax({
+        url:"/userSession",
+        type:"get",
+        success:function(data,status){
+            if(status == "success"){
+                $(".n").css({"display":"none"}).siblings().css({"display":"block"})
+            }
+        },
+        error:function(data,err){
+            $(".has").css({"display":"none"}).siblings().css({"display":"block"});
+            console.log(err);
+        }
+    });
+    /*导航点击跳转*/
+    $(".menu-home").on("click",function(){
+        location.href = "/"
+    });
+    $(".menu-mv").on("click",function(){
+        location.href = "/mv?k=last";
+    });
+    $(".menu-tv").on("click",function(){
+        location.href = "/tv?k=last"
+    });
+    $(".menu-ac").on("click",function(){
+        location.href = "/ac?k=last"
+    });
+    $(".menu-gm").on("click",function(){
+        location.href = "/gm?k=last"
+    });
+    $(".menu-xs").on("click",function(){
+        location.href = "/dc?k=last"
+    });
+    /*微信点击事件*/
+    $(".wx").mouseover(function(){
+        $(".wm").css({"display":"block"})
+    }).mouseout(function(){
+        $(".wm").css({"display":"none"})
+    });
+    $(".wm").mouseover(function(){
+        $(this).css({"display":"block"});
+    }).mouseout(function(){
+        $(this).css({"display":"none"});
+    });
+    /*  搜索search*/
+    $(".l").mouseup(function(){
+        $(".searchResult").css({"display":"none"})
+    });
+    $(".searchContent").bind("input propertychange",function(){
+        if($(this).val()){
+            $(".searchResult").css({"display":"block"});
+            var data = {"name":$(".searchContent").val()};
+            $.ajax({
+                url:"/search",
+                type:"get",
+                data:data,
+                success:function(data,status){
+                    if(status == "success"){
+                        $(".searchResult").css({"display":"block"});
+                        console.log(data[0].name);
+                        $(".searchContent").keypress(function(e){
+                            if(e.keyCode == "13"){
+                                window.open( '/play/mv/'+data[0]._id+'?id='+data[0]._id+'');
+                            }
+                        });
+                        $(".searchResult ul").empty();
+                        for(var i in data){
+                            $(".searchResult ul").append( '<li>'+data[i].name+'<span>'+data[i].score+'</span></li>');
+                            $(".searchResult p em").html(parseInt(i)+1);
+                            $(".searchResult ul").find("li").eq(i).on("click",function(){
+                                window.open( '/play/mv/'+data[i]._id+'?id='+data[i]._id+'')
+                            })
+                        }
+                        $(".search .searchResult ul li").mouseover(function(){
+                            $(this).css({"background":"#EDEDED","color":"#FC4548"})
+                        }).mouseout(function(){
+                            $(this).css({"background":"#FFF","color":"#000"})
+                        })
+                    }
+                },
+                error:function(data,err){
+                    console.log(err);
+                    $(".searchResult ul").empty();
+                    $(".searchResult").css({"display":"block"});
+                    $(".searchResult ul").html('╮(╯▽╰)╭呀，竟然查不到您想要的内容，不如去<a href="">oibip悬赏</a>看看吧').css({"line-height":"24px","font-weight":"900","color":"cadetblue","cursor":"default"}).find("a").css({"color":"deeppink","border-bottom":"1px deeppink solid"});
+                }
+            })
+        }
+        else{
+            $(".searchResult").css({"display":"none"})
+        }
+    }).focus(function(){
+        if($(".searchContent").val())
+            $(".searchResult").css({"display":"block"})
+    });
+    $(".searchBtn").on("click",function(){
+        if($(".searchContent").val()){
+            var data = {"name":$(".searchContent").val()};
+            console.log(data);
+            $.ajax({
+                url:"/search1",
+                type:"get",
+                data:data,
+                success:function(data,status){
+                    location.href = '/movie/detail/'+data[0]._id+'?id='+data[0]._id+'';
+                },
+                error:function(data,err){
+                    console.log(err);
+                    $(".searchResult ul").empty();
+                    $(".searchResult").css({"display":"block"});
+                    $(".searchResult ul").html('╮(╯▽╰)╭呀，竟然查不到您想要的内容，不如去<a href="">oibip悬赏</a>看看吧').css({"line-height":"24px","padding-left":"8px","font-weight":"900","color":"cadetblue","cursor":"default"}).find("a").css({"color":"deeppink","border-bottom":"1px deeppink solid"});
+                }
+            })
+        }else{
+            $(".searchResult").css({"display":"block"});
+            $(".searchResult ul").html('╮(╯▽╰)╭呀，竟然查不到您想要的内容，不如去<a href="">oibip悬赏</a>看看吧').css({"line-height":"24px","padding-left":"8px","font-weight":"900","color":"cadetblue","cursor":"default"}).find("a").css({"color":"deeppink","border-bottom":"1px deeppink solid"});
+        }
+
+    });
+})
+
+
+</script>
+</body>
+</html>

@@ -1,0 +1,905 @@
+<!doctype html>
+<link rel="stylesheet" href="css/index.css">
+<link rel="stylesheet" href="http://cdn.bootcss.com/font-awesome/4.3.0/css/font-awesome.min.css">
+<style>
+    *{margin:0;padding:0;}
+    .auto-play{width:100%;height:450px;overflow: hidden;background-color: #0f0f0f}
+    .auto-play .auto-img .pic a img{display:block;width:100%;height:450px;float:left;}
+    .auto-img .auto-footer{position: absolute;top:381px;width:88%;height:69px;background:url("/img/shade.png") -10px -110px;opacity: 0.8;}
+    .auto-pre{display: block;width:72px;height:72px;position: absolute;top:200px;left:50px;background:url(/img/ico_sliding_910.png);z-index:10}
+    .auto-next{display: block;width:72px;height:72px;position: absolute;top:200px;right:50px;background:url(/img/ico_sliding_910.png) 0px -70px;z-index: 10;}
+    .auto-pre:hover{background:url(/img/ico_sliding_910.png) 0px -145px;}
+    .auto-next:hover{background:url(/img/ico_sliding_910.png) 0px -214px;}
+
+
+</style>
+
+<div class="all">
+    <div class="auto-play container-fluid">
+        <div class="row">
+            <div class="auto-img">
+                <a  href="#" class="auto-pre" ></a>
+                <a href="#" class="auto-next" ></a>
+                <div class="pic">
+
+                </div>
+                <div class="auto-footer">
+                    <div class="row">
+                        <ul class="col-md-7 col-sm-7 col-xs-7 ">
+
+                        </ul>
+                        <div class="ifo col-md-4 col-sm-4 col-xs-4" style="height:50px;line-height: 50px;float:left;color:#fff">
+                        </div>
+                    </div>
+
+                </div>
+
+            </div>
+        </div>
+    </div>
+    <div class="container">
+        <!-电影->
+        <div class="row hot-movies videoL1 s">
+            <div class="movie-nav col-md-12">
+
+                <div class="kindName">
+                    <div class="kindIcon kIcon1"></div>
+                    <p>电影</p>
+                </div>
+                <div class="kindN">
+                    按最近更新
+                    <i class="fa fa-sort-asc s3" aria-hidden="true"></i>
+                </div>
+                <div class="hotMovieMenu">
+                    <ul class="movieCountry">
+                        <li><a href="/mv?k=c1">中国</a></li>
+                        <li><a href="/mv?k=c2">美国</a></li>
+                        <li><a href="/mv?k=c3">韩国</a></li>
+                        <li><a href="/mv?k=c4">日本</a></li>
+                    </ul>
+                    <ul class="movieKind">
+                        <li><a href="/mv?k=k1">动作</a></li>
+                        <li><a href="/mv?k=k2">喜剧</a></li>
+                        <li><a href="/mv?k=k3">爱情</a></li>
+                        <li><a href="/mv?k=k4">科幻</a></li>
+                        <li><a href="/mv?k=k5">悬疑</a></li>
+                        <li><a href="/mv?k=k6">恐怖</a></li>
+                        <li><a href="/mv?k=k7">动画</a></li>
+
+                    </ul>
+                </div>
+                <div class="avCount mvCount">
+                    <div class="zz"></div>
+                    <i></i>
+                    <span>0</span>
+                    个新视频
+                </div>
+                <div class="more">
+                    更多
+                    <i></i>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9 hot-movie-ifo videoL2" style="background:#ffffff">
+                <ul>
+
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3 hot-movie-sort videoL3">
+                <div class="gmHeader">
+                    <div class="gmHeaderLeft"><span>电影</span>排行榜</div>
+                    <div class="gmHeaderRight">
+                        <div class="playCount">评分</div>
+                    </div>
+                </div>
+                <ul>
+                </ul>
+                <div class="sortMore">
+                    <a href="">
+                        查看更多<i> > </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+
+        <!-- 电视剧-->
+        <div class="row hottv videoL1 s">
+            <div class="movie-nav col-md-12">
+                <div class="kindName">
+                    <div class="kindIcon kIcon2"></div>
+                    <p>电视剧</p>
+                </div>
+                <div class="kindN">
+                    按最近更新
+                    <i class="fa fa-sort-asc s3" aria-hidden="true"></i>
+                </div>
+                <div class="hotMovieMenu">
+
+                    <ul class="movieCountry">
+                        <li><a href="/tv?k=c1">国产剧</a></li>
+                        <li><a href="/tv?k=c2">港剧</a></li>
+                        <li><a href="/tv?k=c3">韩剧</a></li>
+                        <li><a href="/tv?k=c4">日剧</a></li>
+                        <li><a href="/tv?k=c5">美剧</a></li>
+                    </ul>
+                    <ul class="movieKind">
+                        <li><a href="/tv?k=k1">偶像剧</a></li>
+                        <li><a href="/tv?k=k2">悬疑剧</a></li>
+                        <li><a href="/tv?k=k3">喜剧</a></li>
+                        <li><a href="/tv?k=k4">言情剧</a></li>
+                        <li><a href="/tv?k=k5">古装剧</a></li>
+                        <li><a href="/tv?k=k6">都市剧</a></li>
+                    </ul>
+                </div>
+                <div class="avCount tvCount">
+                    <div class="zz"></div>
+                    <i></i>
+                    <span>0</span>
+                    个新视频
+                </div>
+                <div class="more">
+                    更多
+                    <i></i>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9 tv-ifo videoL2" style="background:#ffffff">
+                <ul>
+
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3 hot-tv-sort videoL3">
+                <div class="gmHeader">
+                    <div class="gmHeaderLeft"><span>电视剧</span>排行榜</div>
+                    <div class="gmHeaderRight">
+                        <div class="playCount">播放次数</div>
+                    </div>
+                </div>
+                <ul>
+                </ul>
+                <div class="sortMore">
+                    <a href="">
+                        查看更多<i> > </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-- 动漫-->
+        <div class="row  lastAC videoL1 s">
+            <div class="movie-nav col-md-12">
+                <div class="kindName">
+                    <div class="kindIcon kIcon3"></div>
+                    <p>动漫</p>
+                </div>
+                <div class="kindN">
+                    按最近更新
+                    <i class="fa fa-sort-asc s3" aria-hidden="true"></i>
+                </div>
+                <div class="hotMovieMenu">
+
+                    <ul class="movieCountry">
+                        <li><a href="/ac?k=c1">国产动漫</a></li>
+                        <li><a href="/ac?k=c2">日本动漫</a></li>
+                    </ul>
+                    <ul class="movieKind acHotName">
+
+                    </ul>
+                </div>
+                <div class="avCount acCount">
+                    <div class="zz"></div>
+                    <i></i>
+                    <span>0</span>
+                    个新视频
+                </div>
+                <div class="more">
+                    更多
+                    <i></i>
+                </div>
+            </div>
+            <div class="col-md-9 col-sm-9 ac-ifo videoL2 " style="background:#ffffff">
+                <ul>
+
+                </ul>
+            </div>
+
+            <div class="col-md-3 col-sm-3 col-xs-3 hot-ac-sort videoL3">
+                <div class="gmHeader">
+                    <div class="gmHeaderLeft"><span>动漫</span>排行榜</div>
+                    <div class="gmHeaderRight">
+                        <div class="playCount">播放次数</div>
+                    </div>
+                </div>
+                <ul>
+                </ul>
+                <div class="sortMore">
+                    <a href="">
+                        查看更多<i> > </i>
+                    </a>
+                </div>
+            </div>
+        </div>
+        <!-游戏->
+        <div class="row lastGM s">
+            <div class="movie-nav col-md-12">
+                <div class="kindName">
+                    <div class="kindIcon kIcon4"></div>
+                    <p>游戏</p>
+                </div>
+                <div class="kindN">
+                    按最近更新
+                    <i class="fa fa-sort-asc s3" aria-hidden="true"></i>
+                </div>
+                <div class="hotMovieMenu">
+                    <ul class="movieKind">
+                        <li><a href="/gm?k=k1">LOL</a></li>
+                        <li><a href="/gm?k=k2">王者荣耀</a></li>
+                        <li><a href="/gm?k=k3">DNF</a></li>
+                        <li><a href="/gm?k=k4">炉石传说</a></li>
+                        <li><a href="/gm?k=k5">坦克世界</a></li>
+                        <li><a href="/gm?k=k6">部落冲突</a></li>
+                        <li><a href="/gm?k=k7">皇室战争</a></li>
+                    </ul>
+                </div>
+                <div class="avCount gmCount">
+                    <div class="zz"></div>
+                    <i></i>
+                    <span>0</span>
+                    个新视频
+                </div>
+                <div class="more">
+                    更多
+                    <i></i>
+                </div>
+            </div>
+            <div class="col-md-9 hot-fun-ifo">
+                <ul>
+
+                </ul>
+            </div>
+            <div class="col-md-3 gm-sort">
+                <div class="gmHeader">
+                    <div class="gmHeaderLeft"><span>oGMke</span>排行榜</div>
+                    <div class="gmHeaderRight">
+                        <div class="playCount">播放次数</div>
+                    </div>
+                </div>
+                <div class="gmContent gmSort">
+
+                </div>
+                <div class="sortMore">
+
+                    <a href="">
+                        查看更多<i> > </i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+        <!--舞蹈-->
+        <div class="row lastDC s">
+            <div class="movie-nav col-md-12">
+                <div class="kindName">
+                    <div class="kindIcon kIcon5"></div>
+                    <p>舞蹈</p>
+                </div>
+                <div class="kindN">
+                    按最近更新
+                    <i class="fa fa-sort-asc s3" aria-hidden="true"></i>
+                </div>
+                <div class="hotMovieMenu">
+
+                    <ul class="movieCountry">
+                        <li><a href="/dc?k=k1">性感舞蹈</a></li>
+                        <li><a href="/dc?k=k2">宅舞</a></li>
+                    </ul>
+                    <ul class="movieKind dcHotName">
+
+                    </ul>
+                </div>
+                <div class="avCount dcCount">
+                    <div class="zz"></div>
+                    <i></i>
+                    <span>0</span>
+                    个新视频
+                </div>
+                <div class="more">
+                    更多
+                    <i></i>
+                </div>
+            </div>
+            <div class="col-md-9 hot-dc-ifo">
+                <ul>
+
+                </ul>
+            </div>
+            <div class="col-md-3 gm-sort">
+                <div class="gmHeader">
+                    <div class="gmHeaderLeft"><span>oGMke</span>排行榜</div>
+                    <div class="gmHeaderRight">
+                        <div class="playCount">播放次数</div>
+                    </div>
+                </div>
+                <div class="gmContent dcSort">
+
+
+                </div>
+                <div class="sortMore">
+                    <a href="">
+                        查看更多<i> > </i>
+                    </a>
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/js/moment.min.js"></script>
+<!--图片轮播-->
+<script>
+    var poster = {{{poster}}}
+
+            /* 轮播海报*/
+            console.log(poster)
+    for(var i=0;i<poster.length;i++){
+        $(".pic").append(
+                '<a href="#" class="aimg-'+parseInt(i+1)+'" ><img src='+poster[i].posterUrl+'  alt='+poster[i].posterName+'></a>'
+        )
+        $(".auto-footer ul").append(
+                '<li>'+
+                '<a href=""><img  src="'+poster[i].minPosterUrl+'" alt=""></a>'+
+                '<div class="mask"></div>'+
+                '</li>'
+        )
+    }
+    $(".auto-footer ul li").first().addClass("on")
+    var a=1,b=1;
+    var num =0;
+    $(function () {
+        $(".ifo").html($(".aimg-1").find("img").attr("alt"));
+        var index=$(".pic a").length;
+        $(".auto-next").click(function(){
+            b+=1;
+            if(b>index)b=1;
+            if(a>index)a=1;
+            $(".aimg-"+a).hide();
+            $(".aimg-"+b).show();
+            $(".auto-img ul li").eq(a-1).removeClass("on");
+            $(".auto-img ul li").eq(b-1).addClass("on");
+            $(".ifo").html($(".aimg-"+b).find("img").attr("alt"));
+            a+=1;
+        });
+        $(".auto-pre").click(function(){
+            b-=1;
+            if(b<1)b=index;
+            if(a<1)a=index;
+            $(".aimg-"+a).hide();
+            $(".aimg-"+b).show();
+            $(".auto-img ul li").eq(a-1).removeClass("on");
+            $(".auto-img ul li").eq(b-1).addClass("on");
+            $(".ifo").html($(".aimg-"+b).find("img").attr("alt"));
+            a-=1;
+        });
+        var time=0;
+        time=setInterval(function(){
+            b+=1;
+            if(b>index)b=1;
+            if(a>index)a=1;
+            $(".aimg-"+a).fadeOut();
+            $(".aimg-"+b).fadeIn();
+            $(".auto-img ul li").eq(a-1).removeClass("on");
+            $(".auto-img ul li").eq(b-1).addClass("on");
+            $(".ifo").html($(".aimg-"+b).find("img").attr("alt"));
+            a+=1;
+        },2000);
+
+        $(".auto-img ul").delegate("li","mouseover",function(){
+            num = $(".auto-img ul li").index(this)+1;
+            $(".aimg-"+a).hide();
+            $(".aimg-"+num).show();
+            $(".auto-img ul li").eq(a-1).removeClass("on");
+            $(".auto-img ul li").eq(num-1).addClass("on");
+            $(".ifo").html($(".aimg-"+num).find("img").attr("alt"));
+            a=b=num;
+        });
+
+        $(".auto-play,.auto-play ul").mouseenter(function () {
+            clearInterval(time);
+        });
+        $(".auto-play").mouseleave(function(){
+            time=setInterval(function () {
+                b+=1;
+                if(b>index)b=1;
+                if(a>index)a=1;
+                $(".aimg-"+a).hide();
+                $(".aimg-"+b).show();
+                $(".auto-img ul li").eq(a-1).removeClass("on");
+                $(".auto-img ul li").eq(b-1).addClass("on");
+                $(".ifo").html($(".aimg-"+b).find("img").attr("alt"));
+                a+=1;
+            },2000);
+        });
+
+    });
+</script>
+<!--布局事件-->
+<script>
+    $(function(){
+        /*计数转换为万*/
+        function num(a){
+            var n = a/10000;
+            if(n < 1){
+                return a;
+            }else{
+                return n.toFixed(2)+"万"
+            }
+        }
+
+        var m= {{{doc2}}};
+        var d = {{{doc1}}};
+        var d3 = {{{doc3}}}
+
+
+
+        /*最近更新电影排序*/
+        for(var i in d){
+            $(".hot-movies .hot-movie-ifo ul").append(
+                '<li>'+
+                    '<div class="img-ani">'+
+                    '<div class="k"></div>'+
+                    '<a href="/play/mv/'+d[i]._id+'?id='+d[i]._id+'" class="ww w1" title='+d[i].name+'><img src='+d[i].poster+' alt='+d[i].name+'>'+
+        '</a>'+
+            '<div class="shade">'+
+                    '<div class="score">'+d[i].score+'</div>'+
+                    '<div class="playTime">02:00:00</div>'+
+            '</div>'+
+            '</div>'+
+
+            '<div class="text">'+
+                    '<a href="" title='+d[i].name+'><strong>'+d[i].name+'</strong></a>'+
+            '<p>'+moment(d[i].date).format("YYYY-MM-DD")+'</p>'+
+            '</div>'+
+
+            '</li>'
+            )}
+        /*    电影评分排序*/
+        for(var i in m){
+            $(".hot-movie-sort ul").append(
+                    '<li>'+
+                    '<div class="movieSortOne">'+
+                    '<div class="number">'+(parseInt(i)+1)+'</div>'+
+                    '<div class="movieSortName"><a href="">【'+m[i].kind+'】'+m[i].name+'</a></div>'+
+                    '<div class="movieSortScore">'+
+                    '<small>'+m[i].score+'</small>'+
+                    '</div>'+
+                    '</div>'+
+                    '<div class="movieSortSecond">'+
+                    '<div class="movieSortImg col-md-6">'+
+                    '<a href="/play/mv/'+m[i]._id+' class="ww" title='+m[i].name+'><img src='+m[i].poster+' alt='+m[i].poster+'>'+
+                    '</a>'+
+                    '<div class="shade">'+
+                    '<div class="playTime">'+"02:00:00"+'</div>'+
+                    '</div>'+
+                    '</div>'+
+                    '<div class="hot-detail col-md-6">'+
+
+                    '<p>影片简介：<span>'+m[i].summary+'</span></p>'+
+                    '<div class="avBottom">'+
+                    '<div class="avPlayCount"><i></i><span>'+num(m[i].playCount)+'</span></div>'+
+                    '<div class="avCommentCount"><i></i><span>'+num(m[i].commentCount)+'</span></div>'+
+                    '</div>'+
+                    '</div>'+
+                    '</div>'+
+                    '</li>')
+        }
+         /*  最近更新电视剧排序*/
+        for(var i in d3){
+            var d3j = d3[i].playUrl.split("，");
+            if(d3[i].playUrl.indexOf("。")>-1){
+                $(".hottv .tv-ifo ul").append(
+                        '<li>'+
+                        '<div class="img-ani">'+
+                        '<div class="k"></div>'+
+                        '<a href="/tv/detail/'+d3[i]._id+'?id='+d3[i]._id+'" class="ww w1" title='+d3[i].name+'><img src='+d3[i].poster+' alt='+d3[i].name+'>'+
+                        '</a>'+
+                        '<div class="shade">'+
+                        '<div class="d3j">'+parseInt(d3j.length-1)+'集全</div>'+
+                        '</div>'+
+                        '</div>'+
+
+                        '<div class="text">'+
+                        '<a href="" title='+d3[i].name+'><strong>'+d3[i].name+'</strong></a>'+
+                        '<div class="avBottom">'+
+                        '<div class="avPlayCount"><i></i><span>'+num(d3[i].playCount)+'</span></div>'+
+                        '<div class="avCommentCount"><i></i><span>'+num(d3[i].commentCount)+'</span></div>'+
+                        '</div>'+
+                        '</div>'+
+
+                        '</li>'
+                )
+            }else{
+                $(".hottv .tv-ifo ul").append(
+                        '<li>'+
+                        '<div class="img-ani">'+
+                        '<div class="k"></div>'+
+                        '<a href="/tv/detail/'+d3[i]._id+'?id='+d3[i]._id+'" class="ww w1" title='+d3[i].name+'><img src='+d3[i].poster+' alt='+d3[i].name+'>'+
+                        '</a>'+
+                        '<div class="shade">'+
+                        '<div class="d3j">更新至第'+d3j.length+'集</div>'+
+                        '</div>'+
+                        '</div>'+
+
+                        '<div class="text">'+
+                        '<a href="" title='+d3[i].name+'><strong>'+d3[i].name+'</strong></a>'+
+                        '<div class="avBottom">'+
+                        '<div class="avPlayCount"><i></i><span>'+num(d3[i].playCount)+'</span></div>'+
+                        '<div class="avCommentCount"><i></i><span>'+num(d3[i].commentCount)+'</span></div>'+
+                        '</div>'+
+                        '</div>'+
+
+                        '</li>'
+                )
+            }
+           }
+
+
+        /*   热门电视剧排序*/
+        var d4 = {{{doc4}}}
+        for(var i in d4){
+            var d4j = d4[i].playUrl.split("，");
+            if(d4[i].playUrl.indexOf("。")>-1){
+                $(".hot-tv-sort ul").append(
+                        '<li>'+
+                        '<div class="movieSortOne">'+
+                        '<div class="number">'+(parseInt(i)+1)+'</div>'+
+                        '<div class="movieSortName"><a href="">【'+d4[i].country+'】'+d4[i].name+'</a></div>'+
+                        '<div class="movieSortScore">'+
+                        '<small>'+num(d4[i].playCount)+'</small>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="movieSortSecond">'+
+                        '<div class="movieSortImg col-md-6">'+
+                        '<a href="/movie/detail/'+d4[i]._id+' class="ww" title='+d4[i].name+'><img src='+d4[i].poster+' alt='+d4[i].poster+'>'+
+                        '</a>'+
+                        '<div class="shade">'+
+                        '<div class="d3j">'+parseInt(d4j.length-1)+'集全</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="hot-detail col-md-6">'+
+                        '<p>电视剧简介：<span>'+d4[i].summary+'</span></p>'+
+                        '<div class="avBottom">'+
+                        '<div class="avPlayCount"><i></i><span>'+num(d4[i].score)+'</span></div>'+
+                        '<div class="avCommentCount"><i></i><span>'+num(d4[i].commentCount)+'</span></div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</li>')
+            }else{
+                $(".hot-tv-sort ul").append(
+                        '<li>'+
+                        '<div class="movieSortOne">'+
+                        '<div class="number">'+(parseInt(i)+1)+'</div>'+
+                        '<div class="movieSortName"><a href="">【'+d4[i].country+'】'+d4[i].name+'</a></div>'+
+                        '<div class="movieSortScore">'+
+                        '<small>'+num(d4[i].playCount)+'</small>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="movieSortSecond">'+
+                        '<div class="movieSortImg col-md-6">'+
+                        '<a href="/movie/detail/'+d4[i]._id+' class="ww" title='+d4[i].name+'><img src='+d4[i].poster+' alt='+d4[i].poster+'>'+
+                        '</a>'+
+                        '<div class="shade">'+
+                        '<div class="d3j">更新至第'+d4j.length+'集</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="hot-detail col-md-6">'+
+                        '<p>电视剧简介：<span>'+d4[i].summary+'</span><div class="dot">... </div></p>'+
+                        '<div class="avBottom">'+
+                        '<div class="avPlayCount"><i></i><span>'+num(d4[i].score)+'</span></div>'+
+                        '<div class="avCommentCount"><i></i><span>'+num(d4[i].commentCount)+'</span></div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</li>')
+            }
+
+        }
+        /*  动漫nav上的动画排序*/
+        var d5 = {{{doc5}}}
+        for(var i in d5){
+            var d5j = d5[i].playUrl.split("，");
+            console.log(d5[i].playUrl.indexOf("。"))
+            if(d5[i].playUrl.indexOf("。")>-1){
+                $(".ac-ifo ul").append(
+                        '<li>'+
+                        '<div class="img-ani">'+
+                        '<div class="k"></div>'+
+                        '<a href="/tv/detail/'+d5[i]._id+'?id='+d5[i]._id+'" class="ww w1" title='+d5[i].name+'><img src='+d5[i].poster+' alt='+d5[i].name+'>'+
+                        '</a>'+
+                        '<div class="shade">'+
+                        '<div class="d3j">'+parseInt(d5j.length-1)+'集全</div>'+
+                        '</div>'+
+                        '</div>'+
+
+                        '<div class="text">'+
+                        '<a href="" title='+d5[i].name+'><strong>'+d5[i].name+'</strong></a>'+
+                        '<div class="avBottom">'+
+                        '<div class="avPlayCount"><i></i><span>'+num(d5[i].playCount)+'</span></div>'+
+                        '<div class="avCommentCount"><i></i><span>'+num(d5[i].commentCount)+'</span></div>'+
+                        '</div>'+
+                        '</div>'+
+
+                        '</li>'
+                )
+            }else{
+                console.log(d5j.length)
+                $(".ac-ifo ul").append(
+                        '<li>'+
+                        '<div class="img-ani">'+
+                        '<div class="k"></div>'+
+                        '<a href="/tv/detail/'+d5[i]._id+'?id='+d5[i]._id+'" class="ww w1" title='+d5[i].name+'><img src='+d5[i].poster+' alt='+d5[i].name+'>'+
+                        '</a>'+
+                        '<div class="shade">'+
+                        '<div class="d3j">更新至第'+d5j.length+'集</div>'+
+                        '</div>'+
+                        '</div>'+
+
+                        '<div class="text">'+
+                        '<a href="" title='+d5[i].name+'><strong>'+d5[i].name+'</strong></a>'+
+                        '<div class="avBottom">'+
+                        '<div class="avPlayCount"><i></i><span>'+num(d5[i].playCount)+'</span></div>'+
+                        '<div class="avCommentCount"><i></i><span>'+num(d5[i].commentCount)+'</span></div>'+
+                        '</div>'+
+                        '</div>'+
+
+                        '</li>'
+                )
+            }
+            }
+        /*   热门动漫排序*/
+        var d6 = {{{doc6}}}
+        for(var i in d6){
+            var d6j = d6[i].playUrl.split("，");
+            if(d6[i].playUrl.indexOf("。")>-1){
+                $(".hot-ac-sort ul").append(
+                        '<li>'+
+                        '<div class="movieSortOne">'+
+                        '<div class="number">'+(parseInt(i)+1)+'</div>'+
+                        '<div class="movieSortName"><a href="">【'+d6[i].country+'】'+d6[i].name+'</a></div>'+
+                        '<div class="movieSortScore">'+
+                        '<small>'+num(d6[i].playCount)+'</small>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="movieSortSecond">'+
+                        '<div class="movieSortImg col-md-6">'+
+                        '<a href="/movie/detail/'+d6[i]._id+' class="ww" title='+d6[i].name+'><img src='+d6[i].poster+' alt='+d6[i].poster+'>'+
+                        '</a>'+
+                        '<div class="shade">'+
+                        '<div class="d3j">'+parseInt(d6j.length-1)+'集全</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="hot-detail col-md-6">'+
+
+                        '<p>动漫简介：<span>'+d6[i].summary+'</span></p>'+
+                        '<div class="avBottom">'+
+                        '<div class="avPlayCount"><i></i><span>'+num(d6[i].score)+'</span></div>'+
+                        '<div class="avCommentCount"><i></i><span>'+num(d6[i].commentCount)+'</span></div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</li>')
+            }else{
+                $(".hot-ac-sort ul").append(
+                        '<li>'+
+                        '<div class="movieSortOne">'+
+                        '<div class="number">'+(parseInt(i)+1)+'</div>'+
+                        '<div class="movieSortName"><a href="">【'+d6[i].country+'】'+d6[i].name+'</a></div>'+
+                        '<div class="movieSortScore">'+
+                        '<small>'+num(d6[i].playCount)+'</small>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="movieSortSecond">'+
+                        '<div class="movieSortImg col-md-6">'+
+                        '<a href="/movie/detail/'+d6[i]._id+' class="ww" title='+d6[i].name+'><img src='+d6[i].poster+' alt='+d6[i].poster+'>'+
+                        '</a>'+
+                        '<div class="shade">'+
+                        '<div class="d3j">更新至第'+d6j.length+'集</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '<div class="hot-detail col-md-6">'+
+
+                        '<p>动漫简介：<span>'+d6[i].summary+'</span></p>'+
+                        '<div class="avBottom">'+
+                        '<div class="avPlayCount"><i></i><span>'+num(d6[i].score)+'</span></div>'+
+                        '<div class="avCommentCount"><i></i><span>'+num(d6[i].commentCount)+'</span></div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</div>'+
+                        '</li>')
+            }
+
+        }
+        /*  最近更新动漫排序*/
+        for(var i=0;i<1;i++){
+            $(".acHotName").append(
+                '<li><a>'+d6[i].name+'</a></li>'
+            )
+        }
+        /* 最新游戏视频排序*/
+        var d7 = {{{doc7}}}
+        for(var i in d7){
+            $(".lastGM .hot-fun-ifo ul").append(
+            '<li>'+
+            '<div class="keTop">'+
+            '<a href="" title="'+d7[i].name+'" class="ke1"><img src="'+d7[i].poster+'" alt="'+d7[i].name+'"></a>'+
+            '<div class="keKind">'+d7[i].kind+'</div>'+
+            '<div class="kept">'+
+            '<div class="kePlay"></div>'+
+            '<div class="keTime">'+d7[i].playTime+'</div>'+
+            '</div>'+
+            '</div>'+
+            '<div class="user-ifo">'+
+            '<a href="" class="t">'+d7[i].name+'</a>'+ '</div>'+
+            '<div class="text">'+
+            '<span><i></i>'+d7[i].doctor+'</span>'+
+            '<span><i></i>'+num(d7[i].playCount)+'</span>'+
+            '</div>'+
+            '</li>'
+            )}
+        /*热门游戏视频排序*/
+        var d8 = {{{doc8}}}
+        for(var i=0;i<3;i++){
+            $(".gmSort").append(
+            '<div class="gmPart">'+
+                    '<div class="gmPartLeft">'+
+                    '<div class="gmSortNumber">'+parseInt(i+1)+'</div>'+
+                    '<div class="gmImage"><a href=""><img src='+d8[i].poster+' alt=""></a></div>'+
+                    '</div>'+
+
+                    '<div class="gmPartRight">'+
+                    '<div class="gmSortName"><a href="">'+d8[i].name+'</a></div>'+
+            '<div class="gmSortBottom">'+
+                    '<div class="up">'+
+                    '<i></i>'+d8[i].doctor+
+                    '</div>'+
+                    '<div class="gmPlayCount">'+
+                    '<i></i>'+ num(d8[i].playCount)+
+                    '</div>'+
+                    '</div>'+
+                    '</div>'+
+                    '</div>'
+            )
+        }
+        for(var i=3;i<8;i++){
+            $(".gmSort").append(
+            '<div class="gmPartOther">'+
+                    '<div class="OtherNumber">'+parseInt(i+1)+'</div>'+
+                    '<div class="OtherName"><a href="">'+d8[i].name+'</a></div>'+
+                    '</div>'
+            )
+        }
+        /*  最新舞蹈MV排序*/
+        var d9 = {{{doc9}}}
+        for(var i in d9){
+            console.log(typeof(d9[0].playUrl).split("，")[0])
+            var d9j = d9[i].playUrl.split("，");
+            console.log(d9j.length);
+            $(".lastDC .hot-dc-ifo ul").append(
+                    '<li>'+
+                    '<div class="keTop">'+
+                    '<a href="" title="'+d9[i].name+'" class="ke1"><img src="'+d9[i].poster+'" alt="'+d9[i].name+'"></a>'+
+                    '<div class="keKind">'+d9[i].k+'</div>'+
+                    '<div class="kept">'+
+                    '<div class="keTime">'+d9[i].playTime+'</div>'+
+                    '</div>'+
+                    '</div>'+
+                    '<div class="user-ifo">'+
+                    '<div class="useri"><a href=""><img src="img/por1.png" alt=""></a></div>'+
+                    '<a href="" class="t">'+d9[i].doctor+'</a>'+
+                    '</div>'+
+
+                    '<div class="text">'+
+                    '<a href="" title="'+d9[i].name+'">'+d9[i].name+'</a>'+
+                    '<span><i></i>'+num(d9[i].playCount)+'</span>'+
+                    '</div>'+
+                    '</li>'
+            )}
+       /* 热门舞蹈MV排序*/
+        var d10 = {{{doc10}}}
+        for(var i=0;i<3;i++){
+            $(".dcSort").append(
+                    '<div class="gmPart">'+
+                    '<div class="gmPartLeft">'+
+                    '<div class="gmSortNumber">'+parseInt(i+1)+'</div>'+
+                    '<div class="gmImage"><a href=""><img src='+d10[i].poster+' alt=""></a></div>'+
+                    '</div>'+
+
+                    '<div class="gmPartRight">'+
+                    '<div class="gmSortName"><a href="">'+d10[i].name+'</a></div>'+
+                    '<div class="gmSortBottom">'+
+                    '<div class="up">'+
+                    '<i></i>'+
+                    d10[i].doctor+
+                    '</div>'+
+                    '<div class="gmPlayCount">'+
+                    '<i></i>'+
+                    num(d10[i].playCount)+
+                    '</div>'+
+                    '</div>'+
+                    '</div>'+
+                    '</div>'
+            )
+        }
+        for(var i=3;i<8;i++){
+            $(".dcSort").append(
+                    '<div class="gmPartOther">'+
+                    '<div class="OtherNumber">'+parseInt(i+1)+'</div>'+
+                    '<div class="OtherName"><a href="">'+d10[i].name+'</a></div>'+
+                    '</div>'
+            )
+        }
+        /*  舞蹈nav上的舞蹈人排序*/
+        for(var i=0;i<5;i++){
+            $(".dcHotName").append(
+            '<li><a href="/dc?k=k'+parseInt(i+3)+'">'+d10[i].doctor+'</a></li>'
+            )
+        }
+         /*   游戏舞蹈右侧处理*/
+
+
+        $(".hot-fun-ifo ul,.hot-dc-ifo ul").delegate("li","mouseenter",function(){
+            $(this).find(".keKind").animate({top:"0px"},"fast").siblings(".kept").find(".kePlay").show()
+        }).delegate("li","mouseleave",function(){
+            $(this).find(".keKind").animate({top:"-20px"},"fast").siblings(".kept").find(".kePlay").hide()
+        });
+        /*右侧排序事件处理*/
+        $(".hot-movie-sort ul li:not(:nth-child(1)) .movieSortSecond,.hot-tv-sort ul li:not(:nth-child(1)) .movieSortSecond,.hot-ac-sort ul li:not(:nth-child(1)) .movieSortSecond").css({"display":"none"})
+        $(".hot-movie-sort ul li:gt(2):lt(10),.hot-tv-sort ul li:gt(2):lt(10),.hot-ac-sort ul li:gt(2):lt(10)").find(".number").css({"background":"#b8c0cc"})
+        $(".movieSortOne").mouseover(function(){
+            $(this).siblings().css({"display":"block"}).parent().siblings().find(".movieSortSecond").css({"display":"none"})
+        });
+        $(".hot-movie-sort ul li,.hot-tv-sort ul li,.hot-ac-sort ul li").mouseover(function(){
+            $(this).find(".movieSortName a").css({"color":"rgb(242, 93, 142)"})
+        }).mouseout(function(){
+            $(this).find(".movieSortName a").css({"color":"#0f0f0f"})
+        });
+        $(".hotMovieMenu ul li a").mouseover(function(){
+            $(this).parent().css({"border-top":"1px red solid","z-index":"9"})
+        }).mouseout(function(){
+            $(this).parent().css({"border-top":"none"})
+        });
+        $(".avCount").on("mouseenter",function(){
+            $(".zz").show();
+            $(".avCount i").css({"animation":"xz 0.5s"})
+        }).on("mouseleave",function(){
+            $(".zz").hide();
+            $(".avCount i").css({"animation":"zx 0.5s"})
+        })
+
+        $(".gmContent").delegate(".gmPart","mouseenter",function(){
+            $(this).find("a").css({"color":"rgb(242, 93, 142)"})
+        }).delegate(".gmPart","mouseleave",function(){
+            $(this).find("a").css({"color":"#333"})
+        });
+        $(".hot-dc-ifo ul").delegate("li","mouseover",function(){
+            $(this).find(".text a").css({"color":"#E94646"})
+        }).delegate("li","mouseout",function(){
+            $(this).find(".text a").css({"color":"#333"})
+        })
+        $(".hot-fun-ifo ul").delegate("li","mouseover",function(){
+            $(this).find(".t").css({"color":"#E94646"})
+        }).delegate("li","mouseout",function(){
+            $(this).find(".t").css({"color":"#333"})
+        })
+       /* 前三部视频添加new icons*/
+       $(".hot-movie-ifo ul li:lt(3),.tv-ifo ul li:lt(3),.ac-ifo ul li:lt(3)").find(".k").show()
+        /*AJAX请求各分类视频数*/
+        $(".mvCount span").html({{{mvNum}}})
+        $(".tvCount span").html({{{tvNum}}})
+        $(".acCount span").html({{{acNum}}})
+        $(".gmCount span").html({{{gmNum}}})
+        $(".dcCount span").html({{{dcNum}}})
+    })
+</script>
+
+<!--canvas-->

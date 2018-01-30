@@ -1,0 +1,49 @@
+body{}
+article,aside,dialog,footer,header,section,footer,nav,figure,menu{display:block}
+*{margin:0;padding:0;font-family: "Helvetica Neue", Helvetica, Arial, sans-serif}
+li{list-style: none;}
+a,a:hover,a:active,a:link{text-decoration: none}
+nav{width:100%;height:48px;background: black;position: fixed;left:0;top:0;z-index: 99;line-height: 48px;}
+
+.logo{height:50px;float:left;line-height: 50px;}
+.logo img{display:block;float:right;}
+.menu ul li:not(:first-child) {float:left;color:#fff;font-size:13px;text-align: center;width:15%}
+.menu ul li:first-child {display: block;height: 48px;float:left;line-height: 48px;color:#fff;text-align: center}
+.menu ul li{cursor: pointer;width:16%;float:left;text-align:center;color:#fff;}
+.menu ul li:hover{background:#2E2E2E;color:#FF1928;border-bottom: 1px #FF282C solid}
+
+.searchContent{display:block;float:left;width:100%;height:29px;line-height:29px;border:1px #FFF solid;border-radius: 14px;outline:none;padding-left:20px;margin-top:-1px;color:#999;}
+.search{float:left;width:100%;height:29px;margin-top:10px;outline:none;position: relative}
+.search button{position:absolute;background:url("/img/icons.png") -662px -727px;width:20px;height:20px;border:none;top:3px;right:8px;outline: none;}
+.search .searchBtn:hover{background:url("/img/icons.png") -727px -727px;border:none;outline: none}
+.search .searchResult{position: absolute;top:27px;left:10px;width:179px;background:#fff;z-index:10;display:none}
+.search .searchResult p{border-bottom: 1px red solid;height:22px;line-height: 20px;font-size:12px;font-weight: 600;background: #FAFAD2}
+.search .searchResult p span{font-size:13px;}
+.search .searchResult p span em{font-weight:900;color:#FF1928;margin-right:4px;font-family: '微软雅黑', '宋体', Arial, Helvetica, sans-serif}
+.search .searchResult ul{margin-top:-10px;margin-bottom:0;border:1px #ccc solid}
+.search .searchResult ul li{width:100%;height:26px;line-height: 26px;cursor: pointer;padding-left:8px;color:#0f0f0f;font-size:13px;font-weight:700}
+.search .searchResult ul li span{margin-right:10px;float:right;color:#FF4D00;
+    font-weight:600;font-size:15px;}
+.menuRight{float:left;}
+
+.tx img{display:inline-block;width:43px;height:43px;border-radius: 21px;}
+.cuser{display:inline-block;overflow:hidden;text-overflow:ellipsis;display: -webkit-box;
+    -webkit-line-clamp: 1;margin-left:-13px;font-size:smaller}
+.menuRight a{color:#ccc}
+.menuRight a:hover{color:#FF1928}
+a{color:#333;}
+a:hover{color:rgb(242, 93, 142)}
+.deposit{float:left;width:70%;text-align: center}
+.deposit .coin{font-size: 12px;font-weight:400;color:#fff}
+.deposit a:hover{color:rgb(242,93,142)}
+.deposit .cz{font-size: 13px;color:#FC4548}
+.deposit,.wx{color:#fff;cursor: default}
+.wx{float:left;text-align: center;width:30%;height:50px;-webkit-border-radius:0px 0px 5px 5px;-moz-border-radius:0px 0px 5px 5px;border-radius:0px 0px 5px 5px;cursor:pointer;background:#FC4548;}
+.wx:hover{opacity: 0.8;}
+.wm{position: absolute;top:48px;right:15px;display:none;}
+.wm img{width:250px;height:250px;}
+
+/*footer*/
+.footer{background:#333;width:100%;height:100px;color:#fff;font-size:12px;margin-top:100px;padding-top:10px;}
+.notice{width:50%;margin-left:6%;}
+.notice p:first-child{font-size: 14px;color:coral;font-weight: 600}
